@@ -1,0 +1,69 @@
+[
+  {
+    "id": "d1-q1",
+    "section": "D1",
+    "sectionTitle": "Praxis: Container in der Entwicklung",
+    "type": "multiple_choice",
+    "source": "original",
+    "parentId": null,
+    "question": "Welcher Befehl startet alle Services aus einer docker-compose.yml?",
+    "options": ["docker build .", "docker compose up", "kubectl apply -f", "docker rm -f"],
+    "correctAnswer": "docker compose up",
+    "explanation": "`docker compose up` startet die in der Compose-Datei definierten Services und erstellt das Netzwerk.",
+    "tags": ["docker", "compose"]
+  },
+  {
+    "id": "d1-q2",
+    "section": "D1",
+    "sectionTitle": "Praxis: Container in der Entwicklung",
+    "type": "multiple_choice",
+    "source": "original",
+    "parentId": null,
+    "question": "Was ist der Zweck eines Volumes in Docker Compose?",
+    "options": [
+      "CPU-Limit setzen",
+      "Persistente Datenspeicherung ausserhalb des Container-Lebenszyklus",
+      "Container automatisch skalieren",
+      "Netzwerk-Routing konfigurieren"
+    ],
+    "correctAnswer": "Persistente Datenspeicherung ausserhalb des Container-Lebenszyklus",
+    "explanation": "Volumes ermöglichen persistente Daten (z.B. DB-Daten), die beim Neustart des Containers erhalten bleiben.",
+    "tags": ["docker", "volumes"]
+  },
+  {
+    "id": "d1-q3",
+    "section": "D1",
+    "sectionTitle": "Praxis: Container in der Entwicklung",
+    "type": "open_text",
+    "source": "original",
+    "parentId": null,
+    "question": "Was bewirkt die Anweisung `EXPOSE 8080` in einem Dockerfile?",
+    "correctAnswer": "Dokumentiert den Port für die Anwendung",
+    "keywords": ["port", "dokument", "8080", "kommunikation", "netzwerk", "hinweis", "metadata"],
+    "explanation": "EXPOSE dokumentiert, welcher Port genutzt wird. Der Port muss trotzdem mit `-p` beim `docker run` gemappt werden.",
+    "tags": ["dockerfile"]
+  },
+  {
+    "id": "d1-q4",
+    "section": "D1",
+    "sectionTitle": "Praxis: Container in der Entwicklung",
+    "type": "ordering",
+    "source": "original",
+    "parentId": null,
+    "question": "Ordne den typischen lokalen Entwicklungs-Workflow:",
+    "options": [
+      "Code ändern und testen",
+      "Dockerfile schreiben",
+      "Image bauen",
+      "Container starten"
+    ],
+    "correctAnswer": [
+      "Dockerfile schreiben",
+      "Image bauen",
+      "Container starten",
+      "Code ändern und testen"
+    ],
+    "explanation": "Zuerst Dockerfile, dann Build, dann Start. Entwicklung erfolgt iterativ mit erneutem Build bei Änderungen.",
+    "tags": ["workflow"]
+  }
+]

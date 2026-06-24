@@ -1,0 +1,1940 @@
+[
+  {
+    "id": "a-q1-v1",
+    "section": "A",
+    "sectionTitle": "Grundlagen",
+    "type": "multiple_choice",
+    "source": "variant",
+    "parentId": "a-q1",
+    "question": "[Variante 1] Was ist der Hauptunterschied zwischen einem Container und einer virtuellen Maschine (VM)?",
+    "options": [
+      "Container virtualisieren die gesamte Hardware inklusive Guest-OS",
+      "Container teilen sich den Kernel des Host-Systems und isolieren Prozesse auf Anwendungsebene",
+      "VMs sind immer schneller als Container",
+      "Container benötigen immer einen Hypervisor"
+    ],
+    "correctAnswer": "Container teilen sich den Kernel des Host-Systems und isolieren Prozesse auf Anwendungsebene",
+    "explanation": "Container nutzen Namespaces und cgroups des Host-Kernels. VMs emulieren dagegen eine komplette Hardware inklusive eigenem Betriebssystem.",
+    "tags": [
+      "docker",
+      "grundlagen"
+    ]
+  },
+  {
+    "id": "a-q1-v2",
+    "section": "A",
+    "sectionTitle": "Grundlagen",
+    "type": "multiple_choice",
+    "source": "variant",
+    "parentId": "a-q1",
+    "question": "[Variante 2] Was ist der Hauptunterschied zwischen einem Container und einer virtuellen Maschine (VM)?",
+    "options": [
+      "Container teilen sich den Kernel des Host-Systems und isolieren Prozesse auf Anwendungsebene",
+      "Container virtualisieren die gesamte Hardware inklusive Guest-OS",
+      "VMs sind immer schneller als Container",
+      "Container benötigen immer einen Hypervisor"
+    ],
+    "correctAnswer": "Container teilen sich den Kernel des Host-Systems und isolieren Prozesse auf Anwendungsebene",
+    "explanation": "Container nutzen Namespaces und cgroups des Host-Kernels. VMs emulieren dagegen eine komplette Hardware inklusive eigenem Betriebssystem.",
+    "tags": [
+      "docker",
+      "grundlagen"
+    ]
+  },
+  {
+    "id": "a-q2-v1",
+    "section": "A",
+    "sectionTitle": "Grundlagen",
+    "type": "multiple_choice",
+    "source": "variant",
+    "parentId": "a-q2",
+    "question": "[Variante 1] Welche Datei definiert typischerweise, wie ein Docker-Image gebaut wird?",
+    "options": [
+      "docker-compose.yml",
+      "Dockerfile",
+      "package.json",
+      "kubeconfig"
+    ],
+    "correctAnswer": "Dockerfile",
+    "explanation": "Ein Dockerfile enthält Anweisungen (FROM, RUN, COPY, CMD) zum Erstellen eines Images Schritt für Schritt.",
+    "tags": [
+      "docker",
+      "dockerfile"
+    ]
+  },
+  {
+    "id": "a-q2-v2",
+    "section": "A",
+    "sectionTitle": "Grundlagen",
+    "type": "multiple_choice",
+    "source": "variant",
+    "parentId": "a-q2",
+    "question": "[Variante 2] Welche Datei definiert typischerweise, wie ein Docker-Image gebaut wird?",
+    "options": [
+      "Dockerfile",
+      "docker-compose.yml",
+      "package.json",
+      "kubeconfig"
+    ],
+    "correctAnswer": "Dockerfile",
+    "explanation": "Ein Dockerfile enthält Anweisungen (FROM, RUN, COPY, CMD) zum Erstellen eines Images Schritt für Schritt.",
+    "tags": [
+      "docker",
+      "dockerfile"
+    ]
+  },
+  {
+    "id": "a-q3-v1",
+    "section": "A",
+    "sectionTitle": "Grundlagen",
+    "type": "open_text",
+    "source": "variant",
+    "parentId": "a-q3",
+    "question": "[Variante 1] Nennen Sie zwei Vorteile von Containern gegenüber klassischen Deployment-Methoden.",
+    "correctAnswer": "Portabilität und Konsistenz",
+    "keywords": [
+      "portabilität",
+      "portable",
+      "konsistenz",
+      "isolation",
+      "isolation",
+      "skalier",
+      "schnell",
+      "ressourcen",
+      "deployment",
+      "umgebung"
+    ],
+    "explanation": "Typische Vorteile: Portabilität zwischen Umgebungen, konsistente Laufzeit, schnelleres Starten, effizientere Ressourcennutzung und bessere Isolation.",
+    "tags": [
+      "grundlagen"
+    ]
+  },
+  {
+    "id": "a-q3-v2",
+    "section": "A",
+    "sectionTitle": "Grundlagen",
+    "type": "open_text",
+    "source": "variant",
+    "parentId": "a-q3",
+    "question": "[Variante 2] Nennen Sie zwei Vorteile von Containern gegenüber klassischen Deployment-Methoden.",
+    "correctAnswer": "Portabilität und Konsistenz",
+    "keywords": [
+      "portabilität",
+      "portable",
+      "konsistenz",
+      "isolation",
+      "isolation",
+      "skalier",
+      "schnell",
+      "ressourcen",
+      "deployment",
+      "umgebung"
+    ],
+    "explanation": "Typische Vorteile: Portabilität zwischen Umgebungen, konsistente Laufzeit, schnelleres Starten, effizientere Ressourcennutzung und bessere Isolation.",
+    "tags": [
+      "grundlagen"
+    ]
+  },
+  {
+    "id": "a-q4-v1",
+    "section": "A",
+    "sectionTitle": "Grundlagen",
+    "type": "multiple_select",
+    "source": "variant",
+    "parentId": "a-q4",
+    "question": "[Variante 1] Welche Aussagen über Docker-Images sind korrekt? (Mehrere Antworten möglich)",
+    "options": [
+      "Images sind unveränderlich (immutable) und werden in Layern gespeichert",
+      "Ein laufender Container ist eine Instanz eines Images",
+      "Images können nur auf Linux-Systemen erstellt werden",
+      "Images werden in Registries wie Docker Hub gespeichert und geteilt"
+    ],
+    "correctAnswer": [
+      "Images sind unveränderlich (immutable) und werden in Layern gespeichert",
+      "Ein laufender Container ist eine Instanz eines Images",
+      "Images werden in Registries wie Docker Hub gespeichert und geteilt"
+    ],
+    "explanation": "Docker-Images sind layer-basiert und immutable. Container sind lauffähige Instanzen. Registries dienen der Verteilung. Multi-Platform-Builds ermöglichen Images auch für verschiedene Architekturen.",
+    "tags": [
+      "docker",
+      "images"
+    ]
+  },
+  {
+    "id": "a-q4-v2",
+    "section": "A",
+    "sectionTitle": "Grundlagen",
+    "type": "multiple_select",
+    "source": "variant",
+    "parentId": "a-q4",
+    "question": "[Variante 2] Welche Aussagen über Docker-Images sind korrekt? (Mehrere Antworten möglich)",
+    "options": [
+      "Images sind unveränderlich (immutable) und werden in Layern gespeichert",
+      "Ein laufender Container ist eine Instanz eines Images",
+      "Images können nur auf Linux-Systemen erstellt werden",
+      "Images werden in Registries wie Docker Hub gespeichert und geteilt"
+    ],
+    "correctAnswer": [
+      "Images sind unveränderlich (immutable) und werden in Layern gespeichert",
+      "Ein laufender Container ist eine Instanz eines Images",
+      "Images werden in Registries wie Docker Hub gespeichert und geteilt"
+    ],
+    "explanation": "Docker-Images sind layer-basiert und immutable. Container sind lauffähige Instanzen. Registries dienen der Verteilung. Multi-Platform-Builds ermöglichen Images auch für verschiedene Architekturen.",
+    "tags": [
+      "docker",
+      "images"
+    ]
+  },
+  {
+    "id": "b1-q1-v1",
+    "section": "B1",
+    "sectionTitle": "Containerkomposition (Architektur)",
+    "type": "multiple_choice",
+    "source": "variant",
+    "parentId": "b1-q1",
+    "question": "[Variante 1] Was beschreibt am besten das Microservices-Pattern in einer Container-Architektur?",
+    "options": [
+      "Eine monolithische Anwendung in einem einzigen Container",
+      "Aufteilung der Anwendung in unabhängige, kleine Dienste in eigenen Containern",
+      "Nutzung eines einzigen Datenbank-Containers für alle Dienste ohne Trennung",
+      "Deployment ausschliesslich ohne Netzwerkkommunikation zwischen Containern"
+    ],
+    "correctAnswer": "Aufteilung der Anwendung in unabhängige, kleine Dienste in eigenen Containern",
+    "explanation": "Microservices zerlegen eine Anwendung in entkoppelte Dienste, die unabhängig deploybar und skalierbar sind — ideal für Container.",
+    "tags": [
+      "architektur",
+      "microservices"
+    ]
+  },
+  {
+    "id": "b1-q1-v2",
+    "section": "B1",
+    "sectionTitle": "Containerkomposition (Architektur)",
+    "type": "multiple_choice",
+    "source": "variant",
+    "parentId": "b1-q1",
+    "question": "[Variante 2] Was beschreibt am besten das Microservices-Pattern in einer Container-Architektur?",
+    "options": [
+      "Aufteilung der Anwendung in unabhängige, kleine Dienste in eigenen Containern",
+      "Eine monolithische Anwendung in einem einzigen Container",
+      "Nutzung eines einzigen Datenbank-Containers für alle Dienste ohne Trennung",
+      "Deployment ausschliesslich ohne Netzwerkkommunikation zwischen Containern"
+    ],
+    "correctAnswer": "Aufteilung der Anwendung in unabhängige, kleine Dienste in eigenen Containern",
+    "explanation": "Microservices zerlegen eine Anwendung in entkoppelte Dienste, die unabhängig deploybar und skalierbar sind — ideal für Container.",
+    "tags": [
+      "architektur",
+      "microservices"
+    ]
+  },
+  {
+    "id": "b1-q2-v1",
+    "section": "B1",
+    "sectionTitle": "Containerkomposition (Architektur)",
+    "type": "ordering",
+    "source": "variant",
+    "parentId": "b1-q2",
+    "question": "[Variante 1] Ordne die Schichten einer typischen Container-Anwendung von unten nach oben:",
+    "options": [
+      "Anwendungscode",
+      "Container-Runtime (z.B. containerd)",
+      "Betriebssystem-Kernel",
+      "Container-Image"
+    ],
+    "correctAnswer": [
+      "Betriebssystem-Kernel",
+      "Container-Runtime (z.B. containerd)",
+      "Container-Image",
+      "Anwendungscode"
+    ],
+    "explanation": "Der Kernel bildet die Basis, darauf läuft die Container-Runtime, Images definieren die Umgebung, und der Anwendungscode läuft innerhalb des Containers.",
+    "tags": [
+      "architektur"
+    ]
+  },
+  {
+    "id": "b1-q2-v2",
+    "section": "B1",
+    "sectionTitle": "Containerkomposition (Architektur)",
+    "type": "ordering",
+    "source": "variant",
+    "parentId": "b1-q2",
+    "question": "[Variante 2] Ordne die Schichten einer typischen Container-Anwendung von unten nach oben:",
+    "options": [
+      "Anwendungscode",
+      "Container-Runtime (z.B. containerd)",
+      "Betriebssystem-Kernel",
+      "Container-Image"
+    ],
+    "correctAnswer": [
+      "Betriebssystem-Kernel",
+      "Container-Runtime (z.B. containerd)",
+      "Container-Image",
+      "Anwendungscode"
+    ],
+    "explanation": "Der Kernel bildet die Basis, darauf läuft die Container-Runtime, Images definieren die Umgebung, und der Anwendungscode läuft innerhalb des Containers.",
+    "tags": [
+      "architektur"
+    ]
+  },
+  {
+    "id": "b1-q3-v1",
+    "section": "B1",
+    "sectionTitle": "Containerkomposition (Architektur)",
+    "type": "multiple_choice",
+    "source": "variant",
+    "parentId": "b1-q3",
+    "question": "[Variante 1] Welche Komponente ist typischerweise für die Service-zu-Service-Kommunikation in einer Container-Architektur zuständig?",
+    "options": [
+      "Dockerfile",
+      "API-Gateway oder Service Mesh",
+      "Git Repository",
+      "Build-Server allein"
+    ],
+    "correctAnswer": "API-Gateway oder Service Mesh",
+    "explanation": "In verteilten Architekturen regeln API-Gateways und Service Meshes (z.B. Istio) Routing, Sicherheit und Observability zwischen Services.",
+    "tags": [
+      "architektur",
+      "networking"
+    ]
+  },
+  {
+    "id": "b1-q3-v2",
+    "section": "B1",
+    "sectionTitle": "Containerkomposition (Architektur)",
+    "type": "multiple_choice",
+    "source": "variant",
+    "parentId": "b1-q3",
+    "question": "[Variante 2] Welche Komponente ist typischerweise für die Service-zu-Service-Kommunikation in einer Container-Architektur zuständig?",
+    "options": [
+      "API-Gateway oder Service Mesh",
+      "Dockerfile",
+      "Git Repository",
+      "Build-Server allein"
+    ],
+    "correctAnswer": "API-Gateway oder Service Mesh",
+    "explanation": "In verteilten Architekturen regeln API-Gateways und Service Meshes (z.B. Istio) Routing, Sicherheit und Observability zwischen Services.",
+    "tags": [
+      "architektur",
+      "networking"
+    ]
+  },
+  {
+    "id": "b1-q4-v1",
+    "section": "B1",
+    "sectionTitle": "Containerkomposition (Architektur)",
+    "type": "open_text",
+    "source": "variant",
+    "parentId": "b1-q4",
+    "question": "[Variante 1] Was versteht man unter «Sidecar-Pattern» in einer Container-Komposition?",
+    "correctAnswer": "Hilfscontainer neben dem Hauptcontainer",
+    "keywords": [
+      "sidecar",
+      "hilfs",
+      "neben",
+      "zusätzlich",
+      "container",
+      "proxy",
+      "logging",
+      "helper",
+      "begleit"
+    ],
+    "explanation": "Beim Sidecar-Pattern läuft ein Hilfs-Container im selben Pod/Deployment neben dem Haupt-Container, z.B. für Logging, Proxy oder Monitoring.",
+    "tags": [
+      "architektur",
+      "patterns"
+    ]
+  },
+  {
+    "id": "b1-q4-v2",
+    "section": "B1",
+    "sectionTitle": "Containerkomposition (Architektur)",
+    "type": "open_text",
+    "source": "variant",
+    "parentId": "b1-q4",
+    "question": "[Variante 2] Was versteht man unter «Sidecar-Pattern» in einer Container-Komposition?",
+    "correctAnswer": "Hilfscontainer neben dem Hauptcontainer",
+    "keywords": [
+      "sidecar",
+      "hilfs",
+      "neben",
+      "zusätzlich",
+      "container",
+      "proxy",
+      "logging",
+      "helper",
+      "begleit"
+    ],
+    "explanation": "Beim Sidecar-Pattern läuft ein Hilfs-Container im selben Pod/Deployment neben dem Haupt-Container, z.B. für Logging, Proxy oder Monitoring.",
+    "tags": [
+      "architektur",
+      "patterns"
+    ]
+  },
+  {
+    "id": "b2-q1-v1",
+    "section": "B2",
+    "sectionTitle": "Container-Orchestrierung",
+    "type": "multiple_choice",
+    "source": "variant",
+    "parentId": "b2-q1",
+    "question": "[Variante 1] Was ist die kleinste deploybare Einheit in Kubernetes?",
+    "options": [
+      "Node",
+      "Pod",
+      "Cluster",
+      "Deployment"
+    ],
+    "correctAnswer": "Pod",
+    "explanation": "Ein Pod ist die kleinste Einheit in Kubernetes und kann einen oder mehrere Container enthalten, die Ressourcen teilen.",
+    "tags": [
+      "kubernetes",
+      "pod"
+    ]
+  },
+  {
+    "id": "b2-q1-v2",
+    "section": "B2",
+    "sectionTitle": "Container-Orchestrierung",
+    "type": "multiple_choice",
+    "source": "variant",
+    "parentId": "b2-q1",
+    "question": "[Variante 2] Was ist die kleinste deploybare Einheit in Kubernetes?",
+    "options": [
+      "Pod",
+      "Node",
+      "Cluster",
+      "Deployment"
+    ],
+    "correctAnswer": "Pod",
+    "explanation": "Ein Pod ist die kleinste Einheit in Kubernetes und kann einen oder mehrere Container enthalten, die Ressourcen teilen.",
+    "tags": [
+      "kubernetes",
+      "pod"
+    ]
+  },
+  {
+    "id": "b2-q2-v1",
+    "section": "B2",
+    "sectionTitle": "Container-Orchestrierung",
+    "type": "multiple_choice",
+    "source": "variant",
+    "parentId": "b2-q2",
+    "question": "[Variante 1] Welche Kubernetes-Ressource stellt einen stabilen Netzwerk-Endpunkt für Pods bereit?",
+    "options": [
+      "ConfigMap",
+      "Service",
+      "Secret",
+      "PersistentVolume"
+    ],
+    "correctAnswer": "Service",
+    "explanation": "Ein Service bietet eine stabile IP/DNS-Adresse und load-balanced Zugriff auf eine Gruppe von Pods.",
+    "tags": [
+      "kubernetes",
+      "service"
+    ]
+  },
+  {
+    "id": "b2-q2-v2",
+    "section": "B2",
+    "sectionTitle": "Container-Orchestrierung",
+    "type": "multiple_choice",
+    "source": "variant",
+    "parentId": "b2-q2",
+    "question": "[Variante 2] Welche Kubernetes-Ressource stellt einen stabilen Netzwerk-Endpunkt für Pods bereit?",
+    "options": [
+      "Service",
+      "ConfigMap",
+      "Secret",
+      "PersistentVolume"
+    ],
+    "correctAnswer": "Service",
+    "explanation": "Ein Service bietet eine stabile IP/DNS-Adresse und load-balanced Zugriff auf eine Gruppe von Pods.",
+    "tags": [
+      "kubernetes",
+      "service"
+    ]
+  },
+  {
+    "id": "b2-q3-v1",
+    "section": "B2",
+    "sectionTitle": "Container-Orchestrierung",
+    "type": "multiple_select",
+    "source": "variant",
+    "parentId": "b2-q3",
+    "question": "[Variante 1] Welche Aufgaben übernimmt ein Container-Orchestrator? (Mehrere Antworten)",
+    "options": [
+      "Automatisches Scheduling von Containern auf Nodes",
+      "Self-Healing bei ausgefallenen Containern",
+      "Erstellung von Dockerfiles",
+      "Horizontale Skalierung von Workloads"
+    ],
+    "correctAnswer": [
+      "Automatisches Scheduling von Containern auf Nodes",
+      "Self-Healing bei ausgefallenen Containern",
+      "Horizontale Skalierung von Workloads"
+    ],
+    "explanation": "Orchestratoren wie Kubernetes verwalten Scheduling, Skalierung und Wiederherstellung. Dockerfiles werden separat erstellt.",
+    "tags": [
+      "kubernetes",
+      "orchestration"
+    ]
+  },
+  {
+    "id": "b2-q3-v2",
+    "section": "B2",
+    "sectionTitle": "Container-Orchestrierung",
+    "type": "multiple_select",
+    "source": "variant",
+    "parentId": "b2-q3",
+    "question": "[Variante 2] Welche Aufgaben übernimmt ein Container-Orchestrator? (Mehrere Antworten)",
+    "options": [
+      "Automatisches Scheduling von Containern auf Nodes",
+      "Self-Healing bei ausgefallenen Containern",
+      "Erstellung von Dockerfiles",
+      "Horizontale Skalierung von Workloads"
+    ],
+    "correctAnswer": [
+      "Automatisches Scheduling von Containern auf Nodes",
+      "Self-Healing bei ausgefallenen Containern",
+      "Horizontale Skalierung von Workloads"
+    ],
+    "explanation": "Orchestratoren wie Kubernetes verwalten Scheduling, Skalierung und Wiederherstellung. Dockerfiles werden separat erstellt.",
+    "tags": [
+      "kubernetes",
+      "orchestration"
+    ]
+  },
+  {
+    "id": "b2-q4-v1",
+    "section": "B2",
+    "sectionTitle": "Container-Orchestrierung",
+    "type": "open_text",
+    "source": "variant",
+    "parentId": "b2-q4",
+    "question": "[Variante 1] Was bewirkt ein Horizontal Pod Autoscaler (HPA) in Kubernetes?",
+    "correctAnswer": "Skaliert Pods basierend auf Metriken",
+    "keywords": [
+      "skalier",
+      "pods",
+      "automatisch",
+      "metrik",
+      "last",
+      "cpu",
+      "horizontal",
+      "anzahl",
+      "replik"
+    ],
+    "explanation": "Der HPA passt die Anzahl der Pod-Replikas automatisch anhand von Metriken wie CPU-Auslastung oder custom metrics an.",
+    "tags": [
+      "kubernetes",
+      "hpa"
+    ]
+  },
+  {
+    "id": "b2-q4-v2",
+    "section": "B2",
+    "sectionTitle": "Container-Orchestrierung",
+    "type": "open_text",
+    "source": "variant",
+    "parentId": "b2-q4",
+    "question": "[Variante 2] Was bewirkt ein Horizontal Pod Autoscaler (HPA) in Kubernetes?",
+    "correctAnswer": "Skaliert Pods basierend auf Metriken",
+    "keywords": [
+      "skalier",
+      "pods",
+      "automatisch",
+      "metrik",
+      "last",
+      "cpu",
+      "horizontal",
+      "anzahl",
+      "replik"
+    ],
+    "explanation": "Der HPA passt die Anzahl der Pod-Replikas automatisch anhand von Metriken wie CPU-Auslastung oder custom metrics an.",
+    "tags": [
+      "kubernetes",
+      "hpa"
+    ]
+  },
+  {
+    "id": "c1-q1-v1",
+    "section": "C1",
+    "sectionTitle": "Containerdienstleister auswählen",
+    "type": "multiple_choice",
+    "source": "variant",
+    "parentId": "c1-q1",
+    "question": "[Variante 1] Welches Kriterium hat laut Bewertungsmatrix die höchste Gewichtung?",
+    "options": [
+      "Pricing",
+      "Service Discovery",
+      "Security",
+      "Monitoring"
+    ],
+    "correctAnswer": "Security",
+    "explanation": "Security hat die Gewichtung 5 — Sicherheitslücken können zu Datenverlust oder unbefugtem Zugriff führen.",
+    "tags": [
+      "security",
+      "matrix"
+    ]
+  },
+  {
+    "id": "c1-q1-v2",
+    "section": "C1",
+    "sectionTitle": "Containerdienstleister auswählen",
+    "type": "multiple_choice",
+    "source": "variant",
+    "parentId": "c1-q1",
+    "question": "[Variante 2] Welches Kriterium hat laut Bewertungsmatrix die höchste Gewichtung?",
+    "options": [
+      "Service Discovery",
+      "Pricing",
+      "Security",
+      "Monitoring"
+    ],
+    "correctAnswer": "Security",
+    "explanation": "Security hat die Gewichtung 5 — Sicherheitslücken können zu Datenverlust oder unbefugtem Zugriff führen.",
+    "tags": [
+      "security",
+      "matrix"
+    ]
+  },
+  {
+    "id": "c1-q2-v1",
+    "section": "C1",
+    "sectionTitle": "Containerdienstleister auswählen",
+    "type": "multiple_choice",
+    "source": "variant",
+    "parentId": "c1-q2",
+    "question": "[Variante 1] Welche Gewichtung hat das Kriterium «Monitoring» in der Entscheidungsmatrix?",
+    "options": [
+      "2",
+      "3",
+      "4",
+      "5"
+    ],
+    "correctAnswer": "4",
+    "explanation": "Monitoring hat Gewichtung 4, da Fehler und Leistungsprobleme früh erkannt werden sollen.",
+    "tags": [
+      "monitoring",
+      "matrix"
+    ]
+  },
+  {
+    "id": "c1-q2-v2",
+    "section": "C1",
+    "sectionTitle": "Containerdienstleister auswählen",
+    "type": "multiple_choice",
+    "source": "variant",
+    "parentId": "c1-q2",
+    "question": "[Variante 2] Welche Gewichtung hat das Kriterium «Monitoring» in der Entscheidungsmatrix?",
+    "options": [
+      "3",
+      "2",
+      "4",
+      "5"
+    ],
+    "correctAnswer": "4",
+    "explanation": "Monitoring hat Gewichtung 4, da Fehler und Leistungsprobleme früh erkannt werden sollen.",
+    "tags": [
+      "monitoring",
+      "matrix"
+    ]
+  },
+  {
+    "id": "c1-q3-v1",
+    "section": "C1",
+    "sectionTitle": "Containerdienstleister auswählen",
+    "type": "ordering",
+    "source": "variant",
+    "parentId": "c1-q3",
+    "question": "[Variante 1] Ordne die Kriterien nach Gewichtung absteigend (höchste zuerst):",
+    "options": [
+      "Pricing",
+      "Service Discovery",
+      "Security",
+      "Monitoring",
+      "DevOps Tool Integrationen"
+    ],
+    "correctAnswer": [
+      "Security",
+      "Monitoring",
+      "DevOps Tool Integrationen",
+      "Service Discovery",
+      "Pricing"
+    ],
+    "explanation": "Reihenfolge: Security (5), Monitoring (4), DevOps Tool Integrationen (4), Service Discovery (3), Pricing (2).",
+    "tags": [
+      "matrix",
+      "ordering"
+    ]
+  },
+  {
+    "id": "c1-q3-v2",
+    "section": "C1",
+    "sectionTitle": "Containerdienstleister auswählen",
+    "type": "ordering",
+    "source": "variant",
+    "parentId": "c1-q3",
+    "question": "[Variante 2] Ordne die Kriterien nach Gewichtung absteigend (höchste zuerst):",
+    "options": [
+      "Pricing",
+      "Service Discovery",
+      "Security",
+      "Monitoring",
+      "DevOps Tool Integrationen"
+    ],
+    "correctAnswer": [
+      "Security",
+      "Monitoring",
+      "DevOps Tool Integrationen",
+      "Service Discovery",
+      "Pricing"
+    ],
+    "explanation": "Reihenfolge: Security (5), Monitoring (4), DevOps Tool Integrationen (4), Service Discovery (3), Pricing (2).",
+    "tags": [
+      "matrix",
+      "ordering"
+    ]
+  },
+  {
+    "id": "c1-q4-v1",
+    "section": "C1",
+    "sectionTitle": "Containerdienstleister auswählen",
+    "type": "multiple_choice",
+    "source": "variant",
+    "parentId": "c1-q4",
+    "question": "[Variante 1] Was umfasst das Kriterium «Security» in der Bewertungsmatrix?",
+    "options": [
+      "Nur die Netzwerkgeschwindigkeit",
+      "Rollen, Berechtigungen, Verschlüsselung und Secrets-Management",
+      "Ausschliesslich die Anzahl verfügbarer Regionen",
+      "Nur die Preisgestaltung des Anbieters"
+    ],
+    "correctAnswer": "Rollen, Berechtigungen, Verschlüsselung und Secrets-Management",
+    "explanation": "Security umfasst Schutzmechanismen wie IAM/Rollen, Verschlüsselung und sicheres Secrets-Management.",
+    "tags": [
+      "security"
+    ]
+  },
+  {
+    "id": "c1-q4-v2",
+    "section": "C1",
+    "sectionTitle": "Containerdienstleister auswählen",
+    "type": "multiple_choice",
+    "source": "variant",
+    "parentId": "c1-q4",
+    "question": "[Variante 2] Was umfasst das Kriterium «Security» in der Bewertungsmatrix?",
+    "options": [
+      "Rollen, Berechtigungen, Verschlüsselung und Secrets-Management",
+      "Nur die Netzwerkgeschwindigkeit",
+      "Ausschliesslich die Anzahl verfügbarer Regionen",
+      "Nur die Preisgestaltung des Anbieters"
+    ],
+    "correctAnswer": "Rollen, Berechtigungen, Verschlüsselung und Secrets-Management",
+    "explanation": "Security umfasst Schutzmechanismen wie IAM/Rollen, Verschlüsselung und sicheres Secrets-Management.",
+    "tags": [
+      "security"
+    ]
+  },
+  {
+    "id": "c1-q5-v1",
+    "section": "C1",
+    "sectionTitle": "Containerdienstleister auswählen",
+    "type": "matrix",
+    "source": "variant",
+    "parentId": "c1-q5",
+    "question": "[Variante 1] Weise den Kriterien die korrekte Gewichtung aus der Matrix zu:",
+    "matrixItems": [
+      "Security",
+      "Monitoring",
+      "DevOps Tool Integrationen",
+      "Service Discovery",
+      "Pricing"
+    ],
+    "correctAnswer": {
+      "Security": 5,
+      "Monitoring": 4,
+      "DevOps Tool Integrationen": 4,
+      "Service Discovery": 3,
+      "Pricing": 2
+    },
+    "explanation": "Die Matrix gewichtet Security am höchsten (5), gefolgt von Monitoring und DevOps (je 4), Service Discovery (3) und Pricing (2).",
+    "tags": [
+      "matrix"
+    ]
+  },
+  {
+    "id": "c1-q5-v2",
+    "section": "C1",
+    "sectionTitle": "Containerdienstleister auswählen",
+    "type": "matrix",
+    "source": "variant",
+    "parentId": "c1-q5",
+    "question": "[Variante 2] Weise den Kriterien die korrekte Gewichtung aus der Matrix zu:",
+    "matrixItems": [
+      "Security",
+      "Monitoring",
+      "DevOps Tool Integrationen",
+      "Service Discovery",
+      "Pricing"
+    ],
+    "correctAnswer": {
+      "Security": 5,
+      "Monitoring": 4,
+      "DevOps Tool Integrationen": 4,
+      "Service Discovery": 3,
+      "Pricing": 2
+    },
+    "explanation": "Die Matrix gewichtet Security am höchsten (5), gefolgt von Monitoring und DevOps (je 4), Service Discovery (3) und Pricing (2).",
+    "tags": [
+      "matrix"
+    ]
+  },
+  {
+    "id": "c1-q6-v1",
+    "section": "C1",
+    "sectionTitle": "Containerdienstleister auswählen",
+    "type": "open_text",
+    "source": "variant",
+    "parentId": "c1-q6",
+    "question": "[Variante 1] Warum hat «Pricing» in der Matrix die niedrigste Gewichtung?",
+    "correctAnswer": "Kosten stehen hinter Sicherheit und Funktionalität zurück",
+    "keywords": [
+      "sicherheit",
+      "funktional",
+      "kosten",
+      "zurück",
+      "wichtiger",
+      "priorität",
+      "produktiv",
+      "qualität"
+    ],
+    "explanation": "Laut Begründung sind Kosten relevant, stehen bei produktiven Container-Anwendungen aber hinter Sicherheit und Funktionalität.",
+    "tags": [
+      "pricing",
+      "matrix"
+    ]
+  },
+  {
+    "id": "c1-q6-v2",
+    "section": "C1",
+    "sectionTitle": "Containerdienstleister auswählen",
+    "type": "open_text",
+    "source": "variant",
+    "parentId": "c1-q6",
+    "question": "[Variante 2] Warum hat «Pricing» in der Matrix die niedrigste Gewichtung?",
+    "correctAnswer": "Kosten stehen hinter Sicherheit und Funktionalität zurück",
+    "keywords": [
+      "sicherheit",
+      "funktional",
+      "kosten",
+      "zurück",
+      "wichtiger",
+      "priorität",
+      "produktiv",
+      "qualität"
+    ],
+    "explanation": "Laut Begründung sind Kosten relevant, stehen bei produktiven Container-Anwendungen aber hinter Sicherheit und Funktionalität.",
+    "tags": [
+      "pricing",
+      "matrix"
+    ]
+  },
+  {
+    "id": "c2-q1-v1",
+    "section": "C2",
+    "sectionTitle": "Anbietervergleich & Entscheidung",
+    "type": "multiple_choice",
+    "source": "variant",
+    "parentId": "c2-q1",
+    "question": "[Variante 1] Was ist ein sinnvoller erster Schritt bei der Auswahl eines Container-Dienstleisters (PCA)?",
+    "options": [
+      "Sofort den günstigsten Anbieter wählen",
+      "Anforderungen definieren und Bewertungskriterien festlegen",
+      "Alle Container manuell ohne Orchestrierung betreiben",
+      "Nur Marketing-Materialien der Anbieter lesen"
+    ],
+    "correctAnswer": "Anforderungen definieren und Bewertungskriterien festlegen",
+    "explanation": "Eine strukturierte Entscheidung beginnt mit klaren Anforderungen und gewichteten Kriterien — wie in der C1-Matrix.",
+    "tags": [
+      "entscheidung"
+    ]
+  },
+  {
+    "id": "c2-q1-v2",
+    "section": "C2",
+    "sectionTitle": "Anbietervergleich & Entscheidung",
+    "type": "multiple_choice",
+    "source": "variant",
+    "parentId": "c2-q1",
+    "question": "[Variante 2] Was ist ein sinnvoller erster Schritt bei der Auswahl eines Container-Dienstleisters (PCA)?",
+    "options": [
+      "Anforderungen definieren und Bewertungskriterien festlegen",
+      "Sofort den günstigsten Anbieter wählen",
+      "Alle Container manuell ohne Orchestrierung betreiben",
+      "Nur Marketing-Materialien der Anbieter lesen"
+    ],
+    "correctAnswer": "Anforderungen definieren und Bewertungskriterien festlegen",
+    "explanation": "Eine strukturierte Entscheidung beginnt mit klaren Anforderungen und gewichteten Kriterien — wie in der C1-Matrix.",
+    "tags": [
+      "entscheidung"
+    ]
+  },
+  {
+    "id": "c2-q2-v1",
+    "section": "C2",
+    "sectionTitle": "Anbietervergleich & Entscheidung",
+    "type": "multiple_select",
+    "source": "variant",
+    "parentId": "c2-q2",
+    "question": "[Variante 1] Welche PCA-Dienste sind typische Managed-Container-Angebote? (Mehrere Antworten)",
+    "options": [
+      "Amazon ECS/EKS",
+      "Azure Kubernetes Service (AKS)",
+      "Google Kubernetes Engine (GKE)",
+      "Microsoft Word Online"
+    ],
+    "correctAnswer": [
+      "Amazon ECS/EKS",
+      "Azure Kubernetes Service (AKS)",
+      "Google Kubernetes Engine (GKE)"
+    ],
+    "explanation": "AWS, Azure und Google bieten managed Container-/Kubernetes-Dienste. Word Online ist kein Container-Orchestrierungsdienst.",
+    "tags": [
+      "pca",
+      "cloud"
+    ]
+  },
+  {
+    "id": "c2-q2-v2",
+    "section": "C2",
+    "sectionTitle": "Anbietervergleich & Entscheidung",
+    "type": "multiple_select",
+    "source": "variant",
+    "parentId": "c2-q2",
+    "question": "[Variante 2] Welche PCA-Dienste sind typische Managed-Container-Angebote? (Mehrere Antworten)",
+    "options": [
+      "Amazon ECS/EKS",
+      "Azure Kubernetes Service (AKS)",
+      "Google Kubernetes Engine (GKE)",
+      "Microsoft Word Online"
+    ],
+    "correctAnswer": [
+      "Amazon ECS/EKS",
+      "Azure Kubernetes Service (AKS)",
+      "Google Kubernetes Engine (GKE)"
+    ],
+    "explanation": "AWS, Azure und Google bieten managed Container-/Kubernetes-Dienste. Word Online ist kein Container-Orchestrierungsdienst.",
+    "tags": [
+      "pca",
+      "cloud"
+    ]
+  },
+  {
+    "id": "c2-q3-v1",
+    "section": "C2",
+    "sectionTitle": "Anbietervergleich & Entscheidung",
+    "type": "open_text",
+    "source": "variant",
+    "parentId": "c2-q3",
+    "question": "[Variante 1] Was versteht man unter «Vendor Lock-in» bei der Cloud-Auswahl?",
+    "correctAnswer": "Abhängigkeit von einem Anbieter",
+    "keywords": [
+      "abhängig",
+      "anbieter",
+      "wechsel",
+      "migration",
+      "proprietär",
+      "lock-in",
+      "bindung"
+    ],
+    "explanation": "Vendor Lock-in bedeutet, dass man durch proprietäre APIs/Services schwer zu einem anderen Anbieter wechseln kann.",
+    "tags": [
+      "cloud",
+      "entscheidung"
+    ]
+  },
+  {
+    "id": "c2-q3-v2",
+    "section": "C2",
+    "sectionTitle": "Anbietervergleich & Entscheidung",
+    "type": "open_text",
+    "source": "variant",
+    "parentId": "c2-q3",
+    "question": "[Variante 2] Was versteht man unter «Vendor Lock-in» bei der Cloud-Auswahl?",
+    "correctAnswer": "Abhängigkeit von einem Anbieter",
+    "keywords": [
+      "abhängig",
+      "anbieter",
+      "wechsel",
+      "migration",
+      "proprietär",
+      "lock-in",
+      "bindung"
+    ],
+    "explanation": "Vendor Lock-in bedeutet, dass man durch proprietäre APIs/Services schwer zu einem anderen Anbieter wechseln kann.",
+    "tags": [
+      "cloud",
+      "entscheidung"
+    ]
+  },
+  {
+    "id": "c2-q4-v1",
+    "section": "C2",
+    "sectionTitle": "Anbietervergleich & Entscheidung",
+    "type": "multiple_choice",
+    "source": "variant",
+    "parentId": "c2-q4",
+    "question": "[Variante 1] Welches Tool eignet sich zur objektiven Gewichtung von Entscheidungskriterien?",
+    "options": [
+      "Entscheidungsmatrix mit gewichteten Kriterien",
+      "Zufallsgenerator",
+      "Social-Media-Umfrage ohne Kriterien",
+      "Alphabetische Sortierung der Anbieter"
+    ],
+    "correctAnswer": "Entscheidungsmatrix mit gewichteten Kriterien",
+    "explanation": "Eine gewichtete Entscheidungsmatrix ermöglicht transparente, nachvollziehbare Anbietervergleiche.",
+    "tags": [
+      "matrix",
+      "entscheidung"
+    ]
+  },
+  {
+    "id": "c2-q4-v2",
+    "section": "C2",
+    "sectionTitle": "Anbietervergleich & Entscheidung",
+    "type": "multiple_choice",
+    "source": "variant",
+    "parentId": "c2-q4",
+    "question": "[Variante 2] Welches Tool eignet sich zur objektiven Gewichtung von Entscheidungskriterien?",
+    "options": [
+      "Zufallsgenerator",
+      "Entscheidungsmatrix mit gewichteten Kriterien",
+      "Social-Media-Umfrage ohne Kriterien",
+      "Alphabetische Sortierung der Anbieter"
+    ],
+    "correctAnswer": "Entscheidungsmatrix mit gewichteten Kriterien",
+    "explanation": "Eine gewichtete Entscheidungsmatrix ermöglicht transparente, nachvollziehbare Anbietervergleiche.",
+    "tags": [
+      "matrix",
+      "entscheidung"
+    ]
+  },
+  {
+    "id": "d1-q1-v1",
+    "section": "D1",
+    "sectionTitle": "Praxis: Container in der Entwicklung",
+    "type": "multiple_choice",
+    "source": "variant",
+    "parentId": "d1-q1",
+    "question": "[Variante 1] Welcher Befehl startet alle Services aus einer docker-compose.yml?",
+    "options": [
+      "docker build .",
+      "docker compose up",
+      "kubectl apply -f",
+      "docker rm -f"
+    ],
+    "correctAnswer": "docker compose up",
+    "explanation": "`docker compose up` startet die in der Compose-Datei definierten Services und erstellt das Netzwerk.",
+    "tags": [
+      "docker",
+      "compose"
+    ]
+  },
+  {
+    "id": "d1-q1-v2",
+    "section": "D1",
+    "sectionTitle": "Praxis: Container in der Entwicklung",
+    "type": "multiple_choice",
+    "source": "variant",
+    "parentId": "d1-q1",
+    "question": "[Variante 2] Welcher Befehl startet alle Services aus einer docker-compose.yml?",
+    "options": [
+      "docker compose up",
+      "docker build .",
+      "kubectl apply -f",
+      "docker rm -f"
+    ],
+    "correctAnswer": "docker compose up",
+    "explanation": "`docker compose up` startet die in der Compose-Datei definierten Services und erstellt das Netzwerk.",
+    "tags": [
+      "docker",
+      "compose"
+    ]
+  },
+  {
+    "id": "d1-q2-v1",
+    "section": "D1",
+    "sectionTitle": "Praxis: Container in der Entwicklung",
+    "type": "multiple_choice",
+    "source": "variant",
+    "parentId": "d1-q2",
+    "question": "[Variante 1] Was ist der Zweck eines Volumes in Docker Compose?",
+    "options": [
+      "CPU-Limit setzen",
+      "Persistente Datenspeicherung ausserhalb des Container-Lebenszyklus",
+      "Container automatisch skalieren",
+      "Netzwerk-Routing konfigurieren"
+    ],
+    "correctAnswer": "Persistente Datenspeicherung ausserhalb des Container-Lebenszyklus",
+    "explanation": "Volumes ermöglichen persistente Daten (z.B. DB-Daten), die beim Neustart des Containers erhalten bleiben.",
+    "tags": [
+      "docker",
+      "volumes"
+    ]
+  },
+  {
+    "id": "d1-q2-v2",
+    "section": "D1",
+    "sectionTitle": "Praxis: Container in der Entwicklung",
+    "type": "multiple_choice",
+    "source": "variant",
+    "parentId": "d1-q2",
+    "question": "[Variante 2] Was ist der Zweck eines Volumes in Docker Compose?",
+    "options": [
+      "Persistente Datenspeicherung ausserhalb des Container-Lebenszyklus",
+      "CPU-Limit setzen",
+      "Container automatisch skalieren",
+      "Netzwerk-Routing konfigurieren"
+    ],
+    "correctAnswer": "Persistente Datenspeicherung ausserhalb des Container-Lebenszyklus",
+    "explanation": "Volumes ermöglichen persistente Daten (z.B. DB-Daten), die beim Neustart des Containers erhalten bleiben.",
+    "tags": [
+      "docker",
+      "volumes"
+    ]
+  },
+  {
+    "id": "d1-q3-v1",
+    "section": "D1",
+    "sectionTitle": "Praxis: Container in der Entwicklung",
+    "type": "open_text",
+    "source": "variant",
+    "parentId": "d1-q3",
+    "question": "[Variante 1] Was bewirkt die Anweisung `EXPOSE 8080` in einem Dockerfile?",
+    "correctAnswer": "Dokumentiert den Port für die Anwendung",
+    "keywords": [
+      "port",
+      "dokument",
+      "8080",
+      "kommunikation",
+      "netzwerk",
+      "hinweis",
+      "metadata"
+    ],
+    "explanation": "EXPOSE dokumentiert, welcher Port genutzt wird. Der Port muss trotzdem mit `-p` beim `docker run` gemappt werden.",
+    "tags": [
+      "dockerfile"
+    ]
+  },
+  {
+    "id": "d1-q3-v2",
+    "section": "D1",
+    "sectionTitle": "Praxis: Container in der Entwicklung",
+    "type": "open_text",
+    "source": "variant",
+    "parentId": "d1-q3",
+    "question": "[Variante 2] Was bewirkt die Anweisung `EXPOSE 8080` in einem Dockerfile?",
+    "correctAnswer": "Dokumentiert den Port für die Anwendung",
+    "keywords": [
+      "port",
+      "dokument",
+      "8080",
+      "kommunikation",
+      "netzwerk",
+      "hinweis",
+      "metadata"
+    ],
+    "explanation": "EXPOSE dokumentiert, welcher Port genutzt wird. Der Port muss trotzdem mit `-p` beim `docker run` gemappt werden.",
+    "tags": [
+      "dockerfile"
+    ]
+  },
+  {
+    "id": "d1-q4-v1",
+    "section": "D1",
+    "sectionTitle": "Praxis: Container in der Entwicklung",
+    "type": "ordering",
+    "source": "variant",
+    "parentId": "d1-q4",
+    "question": "[Variante 1] Ordne den typischen lokalen Entwicklungs-Workflow:",
+    "options": [
+      "Code ändern und testen",
+      "Dockerfile schreiben",
+      "Image bauen",
+      "Container starten"
+    ],
+    "correctAnswer": [
+      "Dockerfile schreiben",
+      "Image bauen",
+      "Container starten",
+      "Code ändern und testen"
+    ],
+    "explanation": "Zuerst Dockerfile, dann Build, dann Start. Entwicklung erfolgt iterativ mit erneutem Build bei Änderungen.",
+    "tags": [
+      "workflow"
+    ]
+  },
+  {
+    "id": "d1-q4-v2",
+    "section": "D1",
+    "sectionTitle": "Praxis: Container in der Entwicklung",
+    "type": "ordering",
+    "source": "variant",
+    "parentId": "d1-q4",
+    "question": "[Variante 2] Ordne den typischen lokalen Entwicklungs-Workflow:",
+    "options": [
+      "Code ändern und testen",
+      "Dockerfile schreiben",
+      "Image bauen",
+      "Container starten"
+    ],
+    "correctAnswer": [
+      "Dockerfile schreiben",
+      "Image bauen",
+      "Container starten",
+      "Code ändern und testen"
+    ],
+    "explanation": "Zuerst Dockerfile, dann Build, dann Start. Entwicklung erfolgt iterativ mit erneutem Build bei Änderungen.",
+    "tags": [
+      "workflow"
+    ]
+  },
+  {
+    "id": "d2-q1-v1",
+    "section": "D2",
+    "sectionTitle": "Praxis: CI/CD mit Containern",
+    "type": "multiple_choice",
+    "source": "variant",
+    "parentId": "d2-q1",
+    "question": "[Variante 1] Was ist der typische Zweck einer Container-Registry in CI/CD?",
+    "options": [
+      "Quellcode versionieren",
+      "Gebaute Images zentral speichern und versionieren",
+      "Unit-Tests ausführen",
+      "DNS-Einträge verwalten"
+    ],
+    "correctAnswer": "Gebaute Images zentral speichern und versionieren",
+    "explanation": "Registries (Docker Hub, ECR, ACR, GCR) speichern Images mit Tags für Deployment-Pipelines.",
+    "tags": [
+      "cicd",
+      "registry"
+    ]
+  },
+  {
+    "id": "d2-q1-v2",
+    "section": "D2",
+    "sectionTitle": "Praxis: CI/CD mit Containern",
+    "type": "multiple_choice",
+    "source": "variant",
+    "parentId": "d2-q1",
+    "question": "[Variante 2] Was ist der typische Zweck einer Container-Registry in CI/CD?",
+    "options": [
+      "Gebaute Images zentral speichern und versionieren",
+      "Quellcode versionieren",
+      "Unit-Tests ausführen",
+      "DNS-Einträge verwalten"
+    ],
+    "correctAnswer": "Gebaute Images zentral speichern und versionieren",
+    "explanation": "Registries (Docker Hub, ECR, ACR, GCR) speichern Images mit Tags für Deployment-Pipelines.",
+    "tags": [
+      "cicd",
+      "registry"
+    ]
+  },
+  {
+    "id": "d2-q2-v1",
+    "section": "D2",
+    "sectionTitle": "Praxis: CI/CD mit Containern",
+    "type": "multiple_select",
+    "source": "variant",
+    "parentId": "d2-q2",
+    "question": "[Variante 1] Typische Schritte in einer Container-CI/CD-Pipeline: (Mehrere Antworten)",
+    "options": [
+      "Code checkout",
+      "Image bauen und taggen",
+      "Image in Registry pushen",
+      "Deployment in Zielumgebung"
+    ],
+    "correctAnswer": [
+      "Code checkout",
+      "Image bauen und taggen",
+      "Image in Registry pushen",
+      "Deployment in Zielumgebung"
+    ],
+    "explanation": "Eine vollständige Pipeline: Code holen → Image bauen → pushen → deployen.",
+    "tags": [
+      "cicd",
+      "pipeline"
+    ]
+  },
+  {
+    "id": "d2-q2-v2",
+    "section": "D2",
+    "sectionTitle": "Praxis: CI/CD mit Containern",
+    "type": "multiple_select",
+    "source": "variant",
+    "parentId": "d2-q2",
+    "question": "[Variante 2] Typische Schritte in einer Container-CI/CD-Pipeline: (Mehrere Antworten)",
+    "options": [
+      "Code checkout",
+      "Image bauen und taggen",
+      "Image in Registry pushen",
+      "Deployment in Zielumgebung"
+    ],
+    "correctAnswer": [
+      "Code checkout",
+      "Image bauen und taggen",
+      "Image in Registry pushen",
+      "Deployment in Zielumgebung"
+    ],
+    "explanation": "Eine vollständige Pipeline: Code holen → Image bauen → pushen → deployen.",
+    "tags": [
+      "cicd",
+      "pipeline"
+    ]
+  },
+  {
+    "id": "d2-q3-v1",
+    "section": "D2",
+    "sectionTitle": "Praxis: CI/CD mit Containern",
+    "type": "open_text",
+    "source": "variant",
+    "parentId": "d2-q3",
+    "question": "[Variante 1] Was bedeutet «Immutable Infrastructure» im Container-Kontext?",
+    "correctAnswer": "Infrastruktur wird nicht patchen sondern neu deployen",
+    "keywords": [
+      "immutable",
+      "unveränder",
+      "neu",
+      "deploy",
+      "ersetzen",
+      "patch",
+      "image",
+      "reproduzier"
+    ],
+    "explanation": "Statt Server zu patchen, werden neue Container-Images gebaut und ausgerollt — reproduzierbar und konsistent.",
+    "tags": [
+      "cicd",
+      "immutable"
+    ]
+  },
+  {
+    "id": "d2-q3-v2",
+    "section": "D2",
+    "sectionTitle": "Praxis: CI/CD mit Containern",
+    "type": "open_text",
+    "source": "variant",
+    "parentId": "d2-q3",
+    "question": "[Variante 2] Was bedeutet «Immutable Infrastructure» im Container-Kontext?",
+    "correctAnswer": "Infrastruktur wird nicht patchen sondern neu deployen",
+    "keywords": [
+      "immutable",
+      "unveränder",
+      "neu",
+      "deploy",
+      "ersetzen",
+      "patch",
+      "image",
+      "reproduzier"
+    ],
+    "explanation": "Statt Server zu patchen, werden neue Container-Images gebaut und ausgerollt — reproduzierbar und konsistent.",
+    "tags": [
+      "cicd",
+      "immutable"
+    ]
+  },
+  {
+    "id": "d2-q4-v1",
+    "section": "D2",
+    "sectionTitle": "Praxis: CI/CD mit Containern",
+    "type": "multiple_choice",
+    "source": "variant",
+    "parentId": "d2-q4",
+    "question": "[Variante 1] Warum sollte man Images mit eindeutigen Tags (z.B. Git-Commit-Hash) versehen?",
+    "options": [
+      "Um `:latest` zuverlässig zu überschreiben ohne Nachverfolgung",
+      "Für Nachvollziehbarkeit und Rollback-Fähigkeit",
+      "Damit Images kleiner werden",
+      "Um Secrets im Tag zu speichern"
+    ],
+    "correctAnswer": "Für Nachvollziehbarkeit und Rollback-Fähigkeit",
+    "explanation": "Eindeutige Tags verknüpfen Deployments mit Code-Versionen und ermöglichen gezielte Rollbacks.",
+    "tags": [
+      "cicd",
+      "tagging"
+    ]
+  },
+  {
+    "id": "d2-q4-v2",
+    "section": "D2",
+    "sectionTitle": "Praxis: CI/CD mit Containern",
+    "type": "multiple_choice",
+    "source": "variant",
+    "parentId": "d2-q4",
+    "question": "[Variante 2] Warum sollte man Images mit eindeutigen Tags (z.B. Git-Commit-Hash) versehen?",
+    "options": [
+      "Für Nachvollziehbarkeit und Rollback-Fähigkeit",
+      "Um `:latest` zuverlässig zu überschreiben ohne Nachverfolgung",
+      "Damit Images kleiner werden",
+      "Um Secrets im Tag zu speichern"
+    ],
+    "correctAnswer": "Für Nachvollziehbarkeit und Rollback-Fähigkeit",
+    "explanation": "Eindeutige Tags verknüpfen Deployments mit Code-Versionen und ermöglichen gezielte Rollbacks.",
+    "tags": [
+      "cicd",
+      "tagging"
+    ]
+  },
+  {
+    "id": "e1-q1-v1",
+    "section": "E1",
+    "sectionTitle": "Praxis: Container beim PCA (Betrieb)",
+    "type": "multiple_choice",
+    "source": "variant",
+    "parentId": "e1-q1",
+    "question": "[Variante 1] Was ist ein Managed Kubernetes Service beim PCA?",
+    "options": [
+      "Ein selbst gehosteter Kubernetes-Cluster ohne Wartung",
+      "Ein vom Cloud-Anbieter betriebener Kubernetes-Control-Plane",
+      "Ein reines Docker-Desktop-Produkt",
+      "Ein lokales Entwicklungstool"
+    ],
+    "correctAnswer": "Ein vom Cloud-Anbieter betriebener Kubernetes-Control-Plane",
+    "explanation": "Managed K8s (EKS, AKS, GKE) übernimmt Control-Plane-Wartung; der Kunde verwaltet Workloads/Nodes.",
+    "tags": [
+      "pca",
+      "kubernetes"
+    ]
+  },
+  {
+    "id": "e1-q1-v2",
+    "section": "E1",
+    "sectionTitle": "Praxis: Container beim PCA (Betrieb)",
+    "type": "multiple_choice",
+    "source": "variant",
+    "parentId": "e1-q1",
+    "question": "[Variante 2] Was ist ein Managed Kubernetes Service beim PCA?",
+    "options": [
+      "Ein vom Cloud-Anbieter betriebener Kubernetes-Control-Plane",
+      "Ein selbst gehosteter Kubernetes-Cluster ohne Wartung",
+      "Ein reines Docker-Desktop-Produkt",
+      "Ein lokales Entwicklungstool"
+    ],
+    "correctAnswer": "Ein vom Cloud-Anbieter betriebener Kubernetes-Control-Plane",
+    "explanation": "Managed K8s (EKS, AKS, GKE) übernimmt Control-Plane-Wartung; der Kunde verwaltet Workloads/Nodes.",
+    "tags": [
+      "pca",
+      "kubernetes"
+    ]
+  },
+  {
+    "id": "e1-q2-v1",
+    "section": "E1",
+    "sectionTitle": "Praxis: Container beim PCA (Betrieb)",
+    "type": "multiple_choice",
+    "source": "variant",
+    "parentId": "e1-q2",
+    "question": "[Variante 1] Welche PCA-Komponente speichert typischerweise Container-Images?",
+    "options": [
+      "Load Balancer",
+      "Container Registry (z.B. ECR, ACR, GCR)",
+      "CDN",
+      "DNS Zone"
+    ],
+    "correctAnswer": "Container Registry (z.B. ECR, ACR, GCR)",
+    "explanation": "Cloud-Registries sind der zentrale Speicher für Images im PCA-Betrieb.",
+    "tags": [
+      "pca",
+      "registry"
+    ]
+  },
+  {
+    "id": "e1-q2-v2",
+    "section": "E1",
+    "sectionTitle": "Praxis: Container beim PCA (Betrieb)",
+    "type": "multiple_choice",
+    "source": "variant",
+    "parentId": "e1-q2",
+    "question": "[Variante 2] Welche PCA-Komponente speichert typischerweise Container-Images?",
+    "options": [
+      "Container Registry (z.B. ECR, ACR, GCR)",
+      "Load Balancer",
+      "CDN",
+      "DNS Zone"
+    ],
+    "correctAnswer": "Container Registry (z.B. ECR, ACR, GCR)",
+    "explanation": "Cloud-Registries sind der zentrale Speicher für Images im PCA-Betrieb.",
+    "tags": [
+      "pca",
+      "registry"
+    ]
+  },
+  {
+    "id": "e1-q3-v1",
+    "section": "E1",
+    "sectionTitle": "Praxis: Container beim PCA (Betrieb)",
+    "type": "open_text",
+    "source": "variant",
+    "parentId": "e1-q3",
+    "question": "[Variante 1] Was ist der Unterschied zwischen Control Plane und Worker Nodes in Kubernetes?",
+    "correctAnswer": "Control Plane steuert, Worker Nodes führen Workloads aus",
+    "keywords": [
+      "control",
+      "worker",
+      "steuer",
+      "ausführ",
+      "scheduler",
+      "api",
+      "workload",
+      "node"
+    ],
+    "explanation": "Die Control Plane (API Server, Scheduler, etcd) verwaltet den Cluster; Worker Nodes führen die Pods aus.",
+    "tags": [
+      "kubernetes",
+      "betrieb"
+    ]
+  },
+  {
+    "id": "e1-q3-v2",
+    "section": "E1",
+    "sectionTitle": "Praxis: Container beim PCA (Betrieb)",
+    "type": "open_text",
+    "source": "variant",
+    "parentId": "e1-q3",
+    "question": "[Variante 2] Was ist der Unterschied zwischen Control Plane und Worker Nodes in Kubernetes?",
+    "correctAnswer": "Control Plane steuert, Worker Nodes führen Workloads aus",
+    "keywords": [
+      "control",
+      "worker",
+      "steuer",
+      "ausführ",
+      "scheduler",
+      "api",
+      "workload",
+      "node"
+    ],
+    "explanation": "Die Control Plane (API Server, Scheduler, etcd) verwaltet den Cluster; Worker Nodes führen die Pods aus.",
+    "tags": [
+      "kubernetes",
+      "betrieb"
+    ]
+  },
+  {
+    "id": "e1-q4-v1",
+    "section": "E1",
+    "sectionTitle": "Praxis: Container beim PCA (Betrieb)",
+    "type": "multiple_select",
+    "source": "variant",
+    "parentId": "e1-q4",
+    "question": "[Variante 1] Welche Massnahmen gehören zum sicheren PCA-Betrieb? (Mehrere Antworten)",
+    "options": [
+      "IAM-Rollen und Least Privilege",
+      "Secrets in Vault/Secrets Manager statt im Image",
+      "Secrets im Dockerfile committen",
+      "Netzwerk-Policies und Security Groups"
+    ],
+    "correctAnswer": [
+      "IAM-Rollen und Least Privilege",
+      "Secrets in Vault/Secrets Manager statt im Image",
+      "Netzwerk-Policies und Security Groups"
+    ],
+    "explanation": "Sicherer Betrieb erfordert IAM, Secrets-Management und Netzwerk-Isolation — niemals Secrets im Code/Image.",
+    "tags": [
+      "security",
+      "pca"
+    ]
+  },
+  {
+    "id": "e1-q4-v2",
+    "section": "E1",
+    "sectionTitle": "Praxis: Container beim PCA (Betrieb)",
+    "type": "multiple_select",
+    "source": "variant",
+    "parentId": "e1-q4",
+    "question": "[Variante 2] Welche Massnahmen gehören zum sicheren PCA-Betrieb? (Mehrere Antworten)",
+    "options": [
+      "IAM-Rollen und Least Privilege",
+      "Secrets in Vault/Secrets Manager statt im Image",
+      "Secrets im Dockerfile committen",
+      "Netzwerk-Policies und Security Groups"
+    ],
+    "correctAnswer": [
+      "IAM-Rollen und Least Privilege",
+      "Secrets in Vault/Secrets Manager statt im Image",
+      "Netzwerk-Policies und Security Groups"
+    ],
+    "explanation": "Sicherer Betrieb erfordert IAM, Secrets-Management und Netzwerk-Isolation — niemals Secrets im Code/Image.",
+    "tags": [
+      "security",
+      "pca"
+    ]
+  },
+  {
+    "id": "e2-q1-v1",
+    "section": "E2",
+    "sectionTitle": "Praxis: Betrieb & Skalierung in der Cloud",
+    "type": "multiple_choice",
+    "source": "variant",
+    "parentId": "e2-q1",
+    "question": "[Variante 1] Welches Tool-Paar ist typisch für Monitoring und Logging in Cloud-native Umgebungen?",
+    "options": [
+      "Prometheus/Grafana + ELK/Cloud Logging",
+      "Microsoft Paint + Notepad",
+      "FTP + Telnet",
+      "Nur manuelle Log-Dateien ohne Aggregation"
+    ],
+    "correctAnswer": "Prometheus/Grafana + ELK/Cloud Logging",
+    "explanation": "Prometheus/Grafana für Metriken, ELK Stack oder Cloud-Logging-Dienste für zentralisierte Logs.",
+    "tags": [
+      "monitoring",
+      "logging"
+    ]
+  },
+  {
+    "id": "e2-q1-v2",
+    "section": "E2",
+    "sectionTitle": "Praxis: Betrieb & Skalierung in der Cloud",
+    "type": "multiple_choice",
+    "source": "variant",
+    "parentId": "e2-q1",
+    "question": "[Variante 2] Welches Tool-Paar ist typisch für Monitoring und Logging in Cloud-native Umgebungen?",
+    "options": [
+      "Microsoft Paint + Notepad",
+      "Prometheus/Grafana + ELK/Cloud Logging",
+      "FTP + Telnet",
+      "Nur manuelle Log-Dateien ohne Aggregation"
+    ],
+    "correctAnswer": "Prometheus/Grafana + ELK/Cloud Logging",
+    "explanation": "Prometheus/Grafana für Metriken, ELK Stack oder Cloud-Logging-Dienste für zentralisierte Logs.",
+    "tags": [
+      "monitoring",
+      "logging"
+    ]
+  },
+  {
+    "id": "e2-q2-v1",
+    "section": "E2",
+    "sectionTitle": "Praxis: Betrieb & Skalierung in der Cloud",
+    "type": "multiple_choice",
+    "source": "variant",
+    "parentId": "e2-q2",
+    "question": "[Variante 1] Was ermöglicht «Rolling Updates» bei Kubernetes Deployments?",
+    "options": [
+      "Sofortiges Löschen aller Pods ohne Ersatz",
+      "Schrittweises Ersetzen alter Pods durch neue Versionen ohne Downtime",
+      "Manuelles SSH auf jeden Node",
+      "Deaktivierung des Load Balancers"
+    ],
+    "correctAnswer": "Schrittweises Ersetzen alter Pods durch neue Versionen ohne Downtime",
+    "explanation": "Rolling Updates ersetzen Pods graduell, sodass die Anwendung während des Deployments verfügbar bleibt.",
+    "tags": [
+      "kubernetes",
+      "deployment"
+    ]
+  },
+  {
+    "id": "e2-q2-v2",
+    "section": "E2",
+    "sectionTitle": "Praxis: Betrieb & Skalierung in der Cloud",
+    "type": "multiple_choice",
+    "source": "variant",
+    "parentId": "e2-q2",
+    "question": "[Variante 2] Was ermöglicht «Rolling Updates» bei Kubernetes Deployments?",
+    "options": [
+      "Schrittweises Ersetzen alter Pods durch neue Versionen ohne Downtime",
+      "Sofortiges Löschen aller Pods ohne Ersatz",
+      "Manuelles SSH auf jeden Node",
+      "Deaktivierung des Load Balancers"
+    ],
+    "correctAnswer": "Schrittweises Ersetzen alter Pods durch neue Versionen ohne Downtime",
+    "explanation": "Rolling Updates ersetzen Pods graduell, sodass die Anwendung während des Deployments verfügbar bleibt.",
+    "tags": [
+      "kubernetes",
+      "deployment"
+    ]
+  },
+  {
+    "id": "e2-q3-v1",
+    "section": "E2",
+    "sectionTitle": "Praxis: Betrieb & Skalierung in der Cloud",
+    "type": "open_text",
+    "source": "variant",
+    "parentId": "e2-q3",
+    "question": "[Variante 1] Was versteht man unter «High Availability» (HA) im Container-Betrieb?",
+    "correctAnswer": "Hohe Verfügbarkeit durch Redundanz",
+    "keywords": [
+      "verfügbar",
+      "redundanz",
+      "ausfall",
+      "uptime",
+      "replik",
+      "failover",
+      "hoch"
+    ],
+    "explanation": "HA bedeutet, dass der Dienst trotz Ausfällen einzelner Komponenten verfügbar bleibt — durch Replikation und Failover.",
+    "tags": [
+      "ha",
+      "betrieb"
+    ]
+  },
+  {
+    "id": "e2-q3-v2",
+    "section": "E2",
+    "sectionTitle": "Praxis: Betrieb & Skalierung in der Cloud",
+    "type": "open_text",
+    "source": "variant",
+    "parentId": "e2-q3",
+    "question": "[Variante 2] Was versteht man unter «High Availability» (HA) im Container-Betrieb?",
+    "correctAnswer": "Hohe Verfügbarkeit durch Redundanz",
+    "keywords": [
+      "verfügbar",
+      "redundanz",
+      "ausfall",
+      "uptime",
+      "replik",
+      "failover",
+      "hoch"
+    ],
+    "explanation": "HA bedeutet, dass der Dienst trotz Ausfällen einzelner Komponenten verfügbar bleibt — durch Replikation und Failover.",
+    "tags": [
+      "ha",
+      "betrieb"
+    ]
+  },
+  {
+    "id": "e2-q4-v1",
+    "section": "E2",
+    "sectionTitle": "Praxis: Betrieb & Skalierung in der Cloud",
+    "type": "ordering",
+    "source": "variant",
+    "parentId": "e2-q4",
+    "question": "[Variante 1] Ordne die Eskalationsstufen bei einem Produktions-Incident:",
+    "options": [
+      "Alert auslösen / Problem erkennen",
+      "Ursache analysieren (Logs, Metriken)",
+      "Fix deployen oder Rollback",
+      "Post-Mortem dokumentieren"
+    ],
+    "correctAnswer": [
+      "Alert auslösen / Problem erkennen",
+      "Ursache analysieren (Logs, Metriken)",
+      "Fix deployen oder Rollback",
+      "Post-Mortem dokumentieren"
+    ],
+    "explanation": "Incident-Response: Erkennen → Analysieren → Beheben → Lernen und dokumentieren.",
+    "tags": [
+      "incident",
+      "betrieb"
+    ]
+  },
+  {
+    "id": "e2-q4-v2",
+    "section": "E2",
+    "sectionTitle": "Praxis: Betrieb & Skalierung in der Cloud",
+    "type": "ordering",
+    "source": "variant",
+    "parentId": "e2-q4",
+    "question": "[Variante 2] Ordne die Eskalationsstufen bei einem Produktions-Incident:",
+    "options": [
+      "Alert auslösen / Problem erkennen",
+      "Ursache analysieren (Logs, Metriken)",
+      "Fix deployen oder Rollback",
+      "Post-Mortem dokumentieren"
+    ],
+    "correctAnswer": [
+      "Alert auslösen / Problem erkennen",
+      "Ursache analysieren (Logs, Metriken)",
+      "Fix deployen oder Rollback",
+      "Post-Mortem dokumentieren"
+    ],
+    "explanation": "Incident-Response: Erkennen → Analysieren → Beheben → Lernen und dokumentieren.",
+    "tags": [
+      "incident",
+      "betrieb"
+    ]
+  },
+  {
+    "id": "f-q1-v1",
+    "section": "F",
+    "sectionTitle": "Qualitätskontrollen",
+    "type": "multiple_choice",
+    "source": "variant",
+    "parentId": "f-q1",
+    "question": "[Variante 1] Welche Art von Test prüft einzelne Funktionen isoliert?",
+    "options": [
+      "Unit-Test",
+      "Lasttest",
+      "Penetrationstest",
+      "User-Acceptance-Test"
+    ],
+    "correctAnswer": "Unit-Test",
+    "explanation": "Unit-Tests prüfen einzelne Funktionen/Module in Isolation — Basis der Testpyramide.",
+    "tags": [
+      "testing",
+      "unit"
+    ]
+  },
+  {
+    "id": "f-q1-v2",
+    "section": "F",
+    "sectionTitle": "Qualitätskontrollen",
+    "type": "multiple_choice",
+    "source": "variant",
+    "parentId": "f-q1",
+    "question": "[Variante 2] Welche Art von Test prüft einzelne Funktionen isoliert?",
+    "options": [
+      "Lasttest",
+      "Unit-Test",
+      "Penetrationstest",
+      "User-Acceptance-Test"
+    ],
+    "correctAnswer": "Unit-Test",
+    "explanation": "Unit-Tests prüfen einzelne Funktionen/Module in Isolation — Basis der Testpyramide.",
+    "tags": [
+      "testing",
+      "unit"
+    ]
+  },
+  {
+    "id": "f-q2-v1",
+    "section": "F",
+    "sectionTitle": "Qualitätskontrollen",
+    "type": "multiple_select",
+    "source": "variant",
+    "parentId": "f-q2",
+    "question": "[Variante 1] Welche Qualitätskontrollen sind für Container-Projekte sinnvoll? (Mehrere Antworten)",
+    "options": [
+      "Image-Scanning auf Schwachstellen",
+      "Linting/Static Analysis im CI",
+      "Integrationstests mit Test-Containern",
+      "Keine Tests — nur manuelles Deployment"
+    ],
+    "correctAnswer": [
+      "Image-Scanning auf Schwachstellen",
+      "Linting/Static Analysis im CI",
+      "Integrationstests mit Test-Containern"
+    ],
+    "explanation": "Container-QS umfasst Security-Scanning, Code-Qualität und automatisierte Tests in der Pipeline.",
+    "tags": [
+      "quality",
+      "security"
+    ]
+  },
+  {
+    "id": "f-q2-v2",
+    "section": "F",
+    "sectionTitle": "Qualitätskontrollen",
+    "type": "multiple_select",
+    "source": "variant",
+    "parentId": "f-q2",
+    "question": "[Variante 2] Welche Qualitätskontrollen sind für Container-Projekte sinnvoll? (Mehrere Antworten)",
+    "options": [
+      "Image-Scanning auf Schwachstellen",
+      "Linting/Static Analysis im CI",
+      "Integrationstests mit Test-Containern",
+      "Keine Tests — nur manuelles Deployment"
+    ],
+    "correctAnswer": [
+      "Image-Scanning auf Schwachstellen",
+      "Linting/Static Analysis im CI",
+      "Integrationstests mit Test-Containern"
+    ],
+    "explanation": "Container-QS umfasst Security-Scanning, Code-Qualität und automatisierte Tests in der Pipeline.",
+    "tags": [
+      "quality",
+      "security"
+    ]
+  },
+  {
+    "id": "f-q3-v1",
+    "section": "F",
+    "sectionTitle": "Qualitätskontrollen",
+    "type": "open_text",
+    "source": "variant",
+    "parentId": "f-q3",
+    "question": "[Variante 1] Was ist ein «Code Review» und warum ist es wichtig?",
+    "correctAnswer": "Gegenseitige Prüfung des Codes durch Teammitglieder",
+    "keywords": [
+      "review",
+      "prüf",
+      "team",
+      "qualität",
+      "fehler",
+      "peer",
+      "gegenseitig",
+      "kontrolle"
+    ],
+    "explanation": "Code Reviews verbessern Qualität, teilen Wissen und finden Fehler vor dem Merge/Deployment.",
+    "tags": [
+      "review"
+    ]
+  },
+  {
+    "id": "f-q3-v2",
+    "section": "F",
+    "sectionTitle": "Qualitätskontrollen",
+    "type": "open_text",
+    "source": "variant",
+    "parentId": "f-q3",
+    "question": "[Variante 2] Was ist ein «Code Review» und warum ist es wichtig?",
+    "correctAnswer": "Gegenseitige Prüfung des Codes durch Teammitglieder",
+    "keywords": [
+      "review",
+      "prüf",
+      "team",
+      "qualität",
+      "fehler",
+      "peer",
+      "gegenseitig",
+      "kontrolle"
+    ],
+    "explanation": "Code Reviews verbessern Qualität, teilen Wissen und finden Fehler vor dem Merge/Deployment.",
+    "tags": [
+      "review"
+    ]
+  },
+  {
+    "id": "f-q4-v1",
+    "section": "F",
+    "sectionTitle": "Qualitätskontrollen",
+    "type": "multiple_choice",
+    "source": "variant",
+    "parentId": "f-q4",
+    "question": "[Variante 1] Was prüft ein Container-Image-Scanner (z.B. Trivy)?",
+    "options": [
+      "Nur die Schriftart im UI",
+      "Bekannte Schwachstellen (CVEs) in Image-Layern",
+      "Die Internetgeschwindigkeit",
+      "Die Anzahl der Git-Commits"
+    ],
+    "correctAnswer": "Bekannte Schwachstellen (CVEs) in Image-Layern",
+    "explanation": "Image-Scanner analysieren Packages in Images auf bekannte Sicherheitslücken (CVEs).",
+    "tags": [
+      "security",
+      "scanning"
+    ]
+  },
+  {
+    "id": "f-q4-v2",
+    "section": "F",
+    "sectionTitle": "Qualitätskontrollen",
+    "type": "multiple_choice",
+    "source": "variant",
+    "parentId": "f-q4",
+    "question": "[Variante 2] Was prüft ein Container-Image-Scanner (z.B. Trivy)?",
+    "options": [
+      "Bekannte Schwachstellen (CVEs) in Image-Layern",
+      "Nur die Schriftart im UI",
+      "Die Internetgeschwindigkeit",
+      "Die Anzahl der Git-Commits"
+    ],
+    "correctAnswer": "Bekannte Schwachstellen (CVEs) in Image-Layern",
+    "explanation": "Image-Scanner analysieren Packages in Images auf bekannte Sicherheitslücken (CVEs).",
+    "tags": [
+      "security",
+      "scanning"
+    ]
+  }
+]

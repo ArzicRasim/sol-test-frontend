@@ -1,0 +1,68 @@
+[
+  {
+    "id": "a-q1",
+    "section": "A",
+    "sectionTitle": "Grundlagen",
+    "type": "multiple_choice",
+    "source": "original",
+    "parentId": null,
+    "question": "Was ist der Hauptunterschied zwischen einem Container und einer virtuellen Maschine (VM)?",
+    "options": [
+      "Container virtualisieren die gesamte Hardware inklusive Guest-OS",
+      "Container teilen sich den Kernel des Host-Systems und isolieren Prozesse auf Anwendungsebene",
+      "VMs sind immer schneller als Container",
+      "Container benötigen immer einen Hypervisor"
+    ],
+    "correctAnswer": "Container teilen sich den Kernel des Host-Systems und isolieren Prozesse auf Anwendungsebene",
+    "explanation": "Container nutzen Namespaces und cgroups des Host-Kernels. VMs emulieren dagegen eine komplette Hardware inklusive eigenem Betriebssystem.",
+    "tags": ["docker", "grundlagen"]
+  },
+  {
+    "id": "a-q2",
+    "section": "A",
+    "sectionTitle": "Grundlagen",
+    "type": "multiple_choice",
+    "source": "original",
+    "parentId": null,
+    "question": "Welche Datei definiert typischerweise, wie ein Docker-Image gebaut wird?",
+    "options": ["docker-compose.yml", "Dockerfile", "package.json", "kubeconfig"],
+    "correctAnswer": "Dockerfile",
+    "explanation": "Ein Dockerfile enthält Anweisungen (FROM, RUN, COPY, CMD) zum Erstellen eines Images Schritt für Schritt.",
+    "tags": ["docker", "dockerfile"]
+  },
+  {
+    "id": "a-q3",
+    "section": "A",
+    "sectionTitle": "Grundlagen",
+    "type": "open_text",
+    "source": "original",
+    "parentId": null,
+    "question": "Nennen Sie zwei Vorteile von Containern gegenüber klassischen Deployment-Methoden.",
+    "correctAnswer": "Portabilität und Konsistenz",
+    "keywords": ["portabilität", "portable", "konsistenz", "isolation", "isolation", "skalier", "schnell", "ressourcen", "deployment", "umgebung"],
+    "explanation": "Typische Vorteile: Portabilität zwischen Umgebungen, konsistente Laufzeit, schnelleres Starten, effizientere Ressourcennutzung und bessere Isolation.",
+    "tags": ["grundlagen"]
+  },
+  {
+    "id": "a-q4",
+    "section": "A",
+    "sectionTitle": "Grundlagen",
+    "type": "multiple_select",
+    "source": "original",
+    "parentId": null,
+    "question": "Welche Aussagen über Docker-Images sind korrekt? (Mehrere Antworten möglich)",
+    "options": [
+      "Images sind unveränderlich (immutable) und werden in Layern gespeichert",
+      "Ein laufender Container ist eine Instanz eines Images",
+      "Images können nur auf Linux-Systemen erstellt werden",
+      "Images werden in Registries wie Docker Hub gespeichert und geteilt"
+    ],
+    "correctAnswer": [
+      "Images sind unveränderlich (immutable) und werden in Layern gespeichert",
+      "Ein laufender Container ist eine Instanz eines Images",
+      "Images werden in Registries wie Docker Hub gespeichert und geteilt"
+    ],
+    "explanation": "Docker-Images sind layer-basiert und immutable. Container sind lauffähige Instanzen. Registries dienen der Verteilung. Multi-Platform-Builds ermöglichen Images auch für verschiedene Architekturen.",
+    "tags": ["docker", "images"]
+  }
+]

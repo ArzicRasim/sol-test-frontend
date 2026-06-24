@@ -1,0 +1,74 @@
+[
+  {
+    "id": "d2-q1",
+    "section": "D2",
+    "sectionTitle": "Praxis: CI/CD mit Containern",
+    "type": "multiple_choice",
+    "source": "original",
+    "parentId": null,
+    "question": "Was ist der typische Zweck einer Container-Registry in CI/CD?",
+    "options": [
+      "Quellcode versionieren",
+      "Gebaute Images zentral speichern und versionieren",
+      "Unit-Tests ausführen",
+      "DNS-Einträge verwalten"
+    ],
+    "correctAnswer": "Gebaute Images zentral speichern und versionieren",
+    "explanation": "Registries (Docker Hub, ECR, ACR, GCR) speichern Images mit Tags für Deployment-Pipelines.",
+    "tags": ["cicd", "registry"]
+  },
+  {
+    "id": "d2-q2",
+    "section": "D2",
+    "sectionTitle": "Praxis: CI/CD mit Containern",
+    "type": "multiple_select",
+    "source": "original",
+    "parentId": null,
+    "question": "Typische Schritte in einer Container-CI/CD-Pipeline: (Mehrere Antworten)",
+    "options": [
+      "Code checkout",
+      "Image bauen und taggen",
+      "Image in Registry pushen",
+      "Deployment in Zielumgebung"
+    ],
+    "correctAnswer": [
+      "Code checkout",
+      "Image bauen und taggen",
+      "Image in Registry pushen",
+      "Deployment in Zielumgebung"
+    ],
+    "explanation": "Eine vollständige Pipeline: Code holen → Image bauen → pushen → deployen.",
+    "tags": ["cicd", "pipeline"]
+  },
+  {
+    "id": "d2-q3",
+    "section": "D2",
+    "sectionTitle": "Praxis: CI/CD mit Containern",
+    "type": "open_text",
+    "source": "original",
+    "parentId": null,
+    "question": "Was bedeutet «Immutable Infrastructure» im Container-Kontext?",
+    "correctAnswer": "Infrastruktur wird nicht patchen sondern neu deployen",
+    "keywords": ["immutable", "unveränder", "neu", "deploy", "ersetzen", "patch", "image", "reproduzier"],
+    "explanation": "Statt Server zu patchen, werden neue Container-Images gebaut und ausgerollt — reproduzierbar und konsistent.",
+    "tags": ["cicd", "immutable"]
+  },
+  {
+    "id": "d2-q4",
+    "section": "D2",
+    "sectionTitle": "Praxis: CI/CD mit Containern",
+    "type": "multiple_choice",
+    "source": "original",
+    "parentId": null,
+    "question": "Warum sollte man Images mit eindeutigen Tags (z.B. Git-Commit-Hash) versehen?",
+    "options": [
+      "Um `:latest` zuverlässig zu überschreiben ohne Nachverfolgung",
+      "Für Nachvollziehbarkeit und Rollback-Fähigkeit",
+      "Damit Images kleiner werden",
+      "Um Secrets im Tag zu speichern"
+    ],
+    "correctAnswer": "Für Nachvollziehbarkeit und Rollback-Fähigkeit",
+    "explanation": "Eindeutige Tags verknüpfen Deployments mit Code-Versionen und ermöglichen gezielte Rollbacks.",
+    "tags": ["cicd", "tagging"]
+  }
+]

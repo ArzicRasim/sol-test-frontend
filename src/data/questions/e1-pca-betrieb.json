@@ -1,0 +1,73 @@
+[
+  {
+    "id": "e1-q1",
+    "section": "E1",
+    "sectionTitle": "Praxis: Container beim PCA (Betrieb)",
+    "type": "multiple_choice",
+    "source": "original",
+    "parentId": null,
+    "question": "Was ist ein Managed Kubernetes Service beim PCA?",
+    "options": [
+      "Ein selbst gehosteter Kubernetes-Cluster ohne Wartung",
+      "Ein vom Cloud-Anbieter betriebener Kubernetes-Control-Plane",
+      "Ein reines Docker-Desktop-Produkt",
+      "Ein lokales Entwicklungstool"
+    ],
+    "correctAnswer": "Ein vom Cloud-Anbieter betriebener Kubernetes-Control-Plane",
+    "explanation": "Managed K8s (EKS, AKS, GKE) übernimmt Control-Plane-Wartung; der Kunde verwaltet Workloads/Nodes.",
+    "tags": ["pca", "kubernetes"]
+  },
+  {
+    "id": "e1-q2",
+    "section": "E1",
+    "sectionTitle": "Praxis: Container beim PCA (Betrieb)",
+    "type": "multiple_choice",
+    "source": "original",
+    "parentId": null,
+    "question": "Welche PCA-Komponente speichert typischerweise Container-Images?",
+    "options": [
+      "Load Balancer",
+      "Container Registry (z.B. ECR, ACR, GCR)",
+      "CDN",
+      "DNS Zone"
+    ],
+    "correctAnswer": "Container Registry (z.B. ECR, ACR, GCR)",
+    "explanation": "Cloud-Registries sind der zentrale Speicher für Images im PCA-Betrieb.",
+    "tags": ["pca", "registry"]
+  },
+  {
+    "id": "e1-q3",
+    "section": "E1",
+    "sectionTitle": "Praxis: Container beim PCA (Betrieb)",
+    "type": "open_text",
+    "source": "original",
+    "parentId": null,
+    "question": "Was ist der Unterschied zwischen Control Plane und Worker Nodes in Kubernetes?",
+    "correctAnswer": "Control Plane steuert, Worker Nodes führen Workloads aus",
+    "keywords": ["control", "worker", "steuer", "ausführ", "scheduler", "api", "workload", "node"],
+    "explanation": "Die Control Plane (API Server, Scheduler, etcd) verwaltet den Cluster; Worker Nodes führen die Pods aus.",
+    "tags": ["kubernetes", "betrieb"]
+  },
+  {
+    "id": "e1-q4",
+    "section": "E1",
+    "sectionTitle": "Praxis: Container beim PCA (Betrieb)",
+    "type": "multiple_select",
+    "source": "original",
+    "parentId": null,
+    "question": "Welche Massnahmen gehören zum sicheren PCA-Betrieb? (Mehrere Antworten)",
+    "options": [
+      "IAM-Rollen und Least Privilege",
+      "Secrets in Vault/Secrets Manager statt im Image",
+      "Secrets im Dockerfile committen",
+      "Netzwerk-Policies und Security Groups"
+    ],
+    "correctAnswer": [
+      "IAM-Rollen und Least Privilege",
+      "Secrets in Vault/Secrets Manager statt im Image",
+      "Netzwerk-Policies und Security Groups"
+    ],
+    "explanation": "Sicherer Betrieb erfordert IAM, Secrets-Management und Netzwerk-Isolation — niemals Secrets im Code/Image.",
+    "tags": ["security", "pca"]
+  }
+]

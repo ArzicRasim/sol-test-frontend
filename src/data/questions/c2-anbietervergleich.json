@@ -1,0 +1,73 @@
+[
+  {
+    "id": "c2-q1",
+    "section": "C2",
+    "sectionTitle": "Anbietervergleich & Entscheidung",
+    "type": "multiple_choice",
+    "source": "original",
+    "parentId": null,
+    "question": "Was ist ein sinnvoller erster Schritt bei der Auswahl eines Container-Dienstleisters (PCA)?",
+    "options": [
+      "Sofort den günstigsten Anbieter wählen",
+      "Anforderungen definieren und Bewertungskriterien festlegen",
+      "Alle Container manuell ohne Orchestrierung betreiben",
+      "Nur Marketing-Materialien der Anbieter lesen"
+    ],
+    "correctAnswer": "Anforderungen definieren und Bewertungskriterien festlegen",
+    "explanation": "Eine strukturierte Entscheidung beginnt mit klaren Anforderungen und gewichteten Kriterien — wie in der C1-Matrix.",
+    "tags": ["entscheidung"]
+  },
+  {
+    "id": "c2-q2",
+    "section": "C2",
+    "sectionTitle": "Anbietervergleich & Entscheidung",
+    "type": "multiple_select",
+    "source": "original",
+    "parentId": null,
+    "question": "Welche PCA-Dienste sind typische Managed-Container-Angebote? (Mehrere Antworten)",
+    "options": [
+      "Amazon ECS/EKS",
+      "Azure Kubernetes Service (AKS)",
+      "Google Kubernetes Engine (GKE)",
+      "Microsoft Word Online"
+    ],
+    "correctAnswer": [
+      "Amazon ECS/EKS",
+      "Azure Kubernetes Service (AKS)",
+      "Google Kubernetes Engine (GKE)"
+    ],
+    "explanation": "AWS, Azure und Google bieten managed Container-/Kubernetes-Dienste. Word Online ist kein Container-Orchestrierungsdienst.",
+    "tags": ["pca", "cloud"]
+  },
+  {
+    "id": "c2-q3",
+    "section": "C2",
+    "sectionTitle": "Anbietervergleich & Entscheidung",
+    "type": "open_text",
+    "source": "original",
+    "parentId": null,
+    "question": "Was versteht man unter «Vendor Lock-in» bei der Cloud-Auswahl?",
+    "correctAnswer": "Abhängigkeit von einem Anbieter",
+    "keywords": ["abhängig", "anbieter", "wechsel", "migration", "proprietär", "lock-in", "bindung"],
+    "explanation": "Vendor Lock-in bedeutet, dass man durch proprietäre APIs/Services schwer zu einem anderen Anbieter wechseln kann.",
+    "tags": ["cloud", "entscheidung"]
+  },
+  {
+    "id": "c2-q4",
+    "section": "C2",
+    "sectionTitle": "Anbietervergleich & Entscheidung",
+    "type": "multiple_choice",
+    "source": "original",
+    "parentId": null,
+    "question": "Welches Tool eignet sich zur objektiven Gewichtung von Entscheidungskriterien?",
+    "options": [
+      "Entscheidungsmatrix mit gewichteten Kriterien",
+      "Zufallsgenerator",
+      "Social-Media-Umfrage ohne Kriterien",
+      "Alphabetische Sortierung der Anbieter"
+    ],
+    "correctAnswer": "Entscheidungsmatrix mit gewichteten Kriterien",
+    "explanation": "Eine gewichtete Entscheidungsmatrix ermöglicht transparente, nachvollziehbare Anbietervergleiche.",
+    "tags": ["matrix", "entscheidung"]
+  }
+]

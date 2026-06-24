@@ -1,0 +1,74 @@
+[
+  {
+    "id": "e2-q1",
+    "section": "E2",
+    "sectionTitle": "Praxis: Betrieb & Skalierung in der Cloud",
+    "type": "multiple_choice",
+    "source": "original",
+    "parentId": null,
+    "question": "Welches Tool-Paar ist typisch für Monitoring und Logging in Cloud-native Umgebungen?",
+    "options": [
+      "Prometheus/Grafana + ELK/Cloud Logging",
+      "Microsoft Paint + Notepad",
+      "FTP + Telnet",
+      "Nur manuelle Log-Dateien ohne Aggregation"
+    ],
+    "correctAnswer": "Prometheus/Grafana + ELK/Cloud Logging",
+    "explanation": "Prometheus/Grafana für Metriken, ELK Stack oder Cloud-Logging-Dienste für zentralisierte Logs.",
+    "tags": ["monitoring", "logging"]
+  },
+  {
+    "id": "e2-q2",
+    "section": "E2",
+    "sectionTitle": "Praxis: Betrieb & Skalierung in der Cloud",
+    "type": "multiple_choice",
+    "source": "original",
+    "parentId": null,
+    "question": "Was ermöglicht «Rolling Updates» bei Kubernetes Deployments?",
+    "options": [
+      "Sofortiges Löschen aller Pods ohne Ersatz",
+      "Schrittweises Ersetzen alter Pods durch neue Versionen ohne Downtime",
+      "Manuelles SSH auf jeden Node",
+      "Deaktivierung des Load Balancers"
+    ],
+    "correctAnswer": "Schrittweises Ersetzen alter Pods durch neue Versionen ohne Downtime",
+    "explanation": "Rolling Updates ersetzen Pods graduell, sodass die Anwendung während des Deployments verfügbar bleibt.",
+    "tags": ["kubernetes", "deployment"]
+  },
+  {
+    "id": "e2-q3",
+    "section": "E2",
+    "sectionTitle": "Praxis: Betrieb & Skalierung in der Cloud",
+    "type": "open_text",
+    "source": "original",
+    "parentId": null,
+    "question": "Was versteht man unter «High Availability» (HA) im Container-Betrieb?",
+    "correctAnswer": "Hohe Verfügbarkeit durch Redundanz",
+    "keywords": ["verfügbar", "redundanz", "ausfall", "uptime", "replik", "failover", "hoch"],
+    "explanation": "HA bedeutet, dass der Dienst trotz Ausfällen einzelner Komponenten verfügbar bleibt — durch Replikation und Failover.",
+    "tags": ["ha", "betrieb"]
+  },
+  {
+    "id": "e2-q4",
+    "section": "E2",
+    "sectionTitle": "Praxis: Betrieb & Skalierung in der Cloud",
+    "type": "ordering",
+    "source": "original",
+    "parentId": null,
+    "question": "Ordne die Eskalationsstufen bei einem Produktions-Incident:",
+    "options": [
+      "Alert auslösen / Problem erkennen",
+      "Ursache analysieren (Logs, Metriken)",
+      "Fix deployen oder Rollback",
+      "Post-Mortem dokumentieren"
+    ],
+    "correctAnswer": [
+      "Alert auslösen / Problem erkennen",
+      "Ursache analysieren (Logs, Metriken)",
+      "Fix deployen oder Rollback",
+      "Post-Mortem dokumentieren"
+    ],
+    "explanation": "Incident-Response: Erkennen → Analysieren → Beheben → Lernen und dokumentieren.",
+    "tags": ["incident", "betrieb"]
+  }
+]

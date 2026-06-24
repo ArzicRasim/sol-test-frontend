@@ -1,0 +1,68 @@
+[
+  {
+    "id": "f-q1",
+    "section": "F",
+    "sectionTitle": "Qualitätskontrollen",
+    "type": "multiple_choice",
+    "source": "original",
+    "parentId": null,
+    "question": "Welche Art von Test prüft einzelne Funktionen isoliert?",
+    "options": ["Unit-Test", "Lasttest", "Penetrationstest", "User-Acceptance-Test"],
+    "correctAnswer": "Unit-Test",
+    "explanation": "Unit-Tests prüfen einzelne Funktionen/Module in Isolation — Basis der Testpyramide.",
+    "tags": ["testing", "unit"]
+  },
+  {
+    "id": "f-q2",
+    "section": "F",
+    "sectionTitle": "Qualitätskontrollen",
+    "type": "multiple_select",
+    "source": "original",
+    "parentId": null,
+    "question": "Welche Qualitätskontrollen sind für Container-Projekte sinnvoll? (Mehrere Antworten)",
+    "options": [
+      "Image-Scanning auf Schwachstellen",
+      "Linting/Static Analysis im CI",
+      "Integrationstests mit Test-Containern",
+      "Keine Tests — nur manuelles Deployment"
+    ],
+    "correctAnswer": [
+      "Image-Scanning auf Schwachstellen",
+      "Linting/Static Analysis im CI",
+      "Integrationstests mit Test-Containern"
+    ],
+    "explanation": "Container-QS umfasst Security-Scanning, Code-Qualität und automatisierte Tests in der Pipeline.",
+    "tags": ["quality", "security"]
+  },
+  {
+    "id": "f-q3",
+    "section": "F",
+    "sectionTitle": "Qualitätskontrollen",
+    "type": "open_text",
+    "source": "original",
+    "parentId": null,
+    "question": "Was ist ein «Code Review» und warum ist es wichtig?",
+    "correctAnswer": "Gegenseitige Prüfung des Codes durch Teammitglieder",
+    "keywords": ["review", "prüf", "team", "qualität", "fehler", "peer", "gegenseitig", "kontrolle"],
+    "explanation": "Code Reviews verbessern Qualität, teilen Wissen und finden Fehler vor dem Merge/Deployment.",
+    "tags": ["review"]
+  },
+  {
+    "id": "f-q4",
+    "section": "F",
+    "sectionTitle": "Qualitätskontrollen",
+    "type": "multiple_choice",
+    "source": "original",
+    "parentId": null,
+    "question": "Was prüft ein Container-Image-Scanner (z.B. Trivy)?",
+    "options": [
+      "Nur die Schriftart im UI",
+      "Bekannte Schwachstellen (CVEs) in Image-Layern",
+      "Die Internetgeschwindigkeit",
+      "Die Anzahl der Git-Commits"
+    ],
+    "correctAnswer": "Bekannte Schwachstellen (CVEs) in Image-Layern",
+    "explanation": "Image-Scanner analysieren Packages in Images auf bekannte Sicherheitslücken (CVEs).",
+    "tags": ["security", "scanning"]
+  }
+]
