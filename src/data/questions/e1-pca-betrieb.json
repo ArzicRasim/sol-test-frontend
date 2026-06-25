@@ -2,72 +2,69 @@
   {
     "id": "e1-q1",
     "section": "E1",
-    "sectionTitle": "Praxis: Container beim PCA (Betrieb)",
+    "sectionTitle": "Praxis mit Containern beim PCA (Betrieb)",
     "type": "multiple_choice",
     "source": "original",
     "parentId": null,
-    "question": "Was ist ein Managed Kubernetes Service beim PCA?",
+    "question": "Welche Massnahme erhöht die Sicherheit beim Zugriff auf einen Cloud-Anbieter am meisten?",
     "options": [
-      "Ein selbst gehosteter Kubernetes-Cluster ohne Wartung",
-      "Ein vom Cloud-Anbieter betriebener Kubernetes-Control-Plane",
-      "Ein reines Docker-Desktop-Produkt",
-      "Ein lokales Entwicklungstool"
+      "Langes Passwort verwenden",
+      "Zugriff ohne Login ermöglichen",
+      "Multi-Faktor-Authentifizierung (MFA) aktivieren",
+      "Zugriff über HTTPS statt HTTP"
     ],
-    "correctAnswer": "Ein vom Cloud-Anbieter betriebener Kubernetes-Control-Plane",
-    "explanation": "Managed K8s (EKS, AKS, GKE) übernimmt Control-Plane-Wartung; der Kunde verwaltet Workloads/Nodes.",
-    "tags": ["pca", "kubernetes"]
+    "correctAnswer": "Multi-Faktor-Authentifizierung (MFA) aktivieren",
+    "explanation": "MFA kombiniert etwas, das man weiss (Passwort), mit einem zweiten Faktor (z. B. App-Code) und bietet den stärksten Schutz gegen unbefugten Zugriff.",
+    "tags": ["security", "cloud", "easy"]
   },
   {
     "id": "e1-q2",
     "section": "E1",
-    "sectionTitle": "Praxis: Container beim PCA (Betrieb)",
-    "type": "multiple_choice",
+    "sectionTitle": "Praxis mit Containern beim PCA (Betrieb)",
+    "type": "open_text",
     "source": "original",
     "parentId": null,
-    "question": "Welche PCA-Komponente speichert typischerweise Container-Images?",
-    "options": [
-      "Load Balancer",
-      "Container Registry (z.B. ECR, ACR, GCR)",
-      "CDN",
-      "DNS Zone"
+    "question": "Ein Entwickler erstellt eine Cloud-Instanz (Ubuntu 24.04, öffentliche IP). Firewall: Port 22 und Port 80 offen. Erkläre die Funktion von Port 22 und Port 80 und beschreibe, warum diese Konfiguration für einen Webserver sinnvoll ist.",
+    "correctAnswer": "Port 22 für SSH-Administration, Port 80 für HTTP-Webzugriff",
+    "keywords": [
+      "ssh",
+      "22",
+      "80",
+      "http",
+      "admin",
+      "web",
+      "firewall",
+      "öffentlich",
+      "zugriff",
+      "sicher"
     ],
-    "correctAnswer": "Container Registry (z.B. ECR, ACR, GCR)",
-    "explanation": "Cloud-Registries sind der zentrale Speicher für Images im PCA-Betrieb.",
-    "tags": ["pca", "registry"]
+    "explanation": "Port 22: SSH für sicheren Remote-Zugriff zur Administration. Port 80: HTTP für Webzugriff. Die öffentliche IP ermöglicht externen Zugriff; die Firewall öffnet nur benötigte Ports.",
+    "tags": ["cloud", "netzwerk", "medium"]
   },
   {
     "id": "e1-q3",
     "section": "E1",
-    "sectionTitle": "Praxis: Container beim PCA (Betrieb)",
+    "sectionTitle": "Praxis mit Containern beim PCA (Betrieb)",
     "type": "open_text",
     "source": "original",
     "parentId": null,
-    "question": "Was ist der Unterschied zwischen Control Plane und Worker Nodes in Kubernetes?",
-    "correctAnswer": "Control Plane steuert, Worker Nodes führen Workloads aus",
-    "keywords": ["control", "worker", "steuer", "ausführ", "scheduler", "api", "workload", "node"],
-    "explanation": "Die Control Plane (API Server, Scheduler, etcd) verwaltet den Cluster; Worker Nodes führen die Pods aus.",
-    "tags": ["kubernetes", "betrieb"]
-  },
-  {
-    "id": "e1-q4",
-    "section": "E1",
-    "sectionTitle": "Praxis: Container beim PCA (Betrieb)",
-    "type": "multiple_select",
-    "source": "original",
-    "parentId": null,
-    "question": "Welche Massnahmen gehören zum sicheren PCA-Betrieb? (Mehrere Antworten)",
-    "options": [
-      "IAM-Rollen und Least Privilege",
-      "Secrets in Vault/Secrets Manager statt im Image",
-      "Secrets im Dockerfile committen",
-      "Netzwerk-Policies und Security Groups"
+    "question": "Eine containerisierte Anwendung soll betrieben werden mit: Nur der Reverse Proxy öffentlich erreichbar, Backend nur intern, Datenbank nur mit Backend kommunizierend. Beschreibe zwei Sicherheitsmassnahmen für die Netzwerkkonfiguration.",
+    "image": "E1E.png",
+    "correctAnswer": "Nur Reverse Proxy mit öffentlichen Ports, internes Netzwerk für Backend und DB",
+    "keywords": [
+      "reverse proxy",
+      "öffentlich",
+      "intern",
+      "backend",
+      "datenbank",
+      "netzwerk",
+      "port",
+      "443",
+      "80",
+      "docker",
+      "isolation"
     ],
-    "correctAnswer": [
-      "IAM-Rollen und Least Privilege",
-      "Secrets in Vault/Secrets Manager statt im Image",
-      "Netzwerk-Policies und Security Groups"
-    ],
-    "explanation": "Sicherer Betrieb erfordert IAM, Secrets-Management und Netzwerk-Isolation — niemals Secrets im Code/Image.",
-    "tags": ["security", "pca"]
+    "explanation": "Nur der Reverse Proxy sollte öffentliche Ports (80/443) haben. Backend und Datenbank keine öffentlichen Ports. Kommunikation über internes Docker-Netzwerk; Datenbank akzeptiert nur Verbindungen vom Backend.",
+    "tags": ["security", "netzwerk", "medium"]
   }
 ]

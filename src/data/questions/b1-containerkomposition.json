@@ -6,69 +6,62 @@
     "type": "multiple_choice",
     "source": "original",
     "parentId": null,
-    "question": "Was beschreibt am besten das Microservices-Pattern in einer Container-Architektur?",
+    "question": "Welche Aussage beschreibt eine monolithische Architektur korrekt?",
     "options": [
-      "Eine monolithische Anwendung in einem einzigen Container",
-      "Aufteilung der Anwendung in unabhängige, kleine Dienste in eigenen Containern",
-      "Nutzung eines einzigen Datenbank-Containers für alle Dienste ohne Trennung",
-      "Deployment ausschliesslich ohne Netzwerkkommunikation zwischen Containern"
+      "Frontend, Backend und Datenbank laufen in getrennten Containern",
+      "Jeder Service wird unabhängig deployed",
+      "Die gesamte Anwendung läuft in einem einzigen Container",
+      "Ein Auth-Service wird separat betrieben"
     ],
-    "correctAnswer": "Aufteilung der Anwendung in unabhängige, kleine Dienste in eigenen Containern",
-    "explanation": "Microservices zerlegen eine Anwendung in entkoppelte Dienste, die unabhängig deploybar und skalierbar sind — ideal für Container.",
-    "tags": ["architektur", "microservices"]
+    "correctAnswer": "Die gesamte Anwendung läuft in einem einzigen Container",
+    "explanation": "Bei einer monolithischen Architektur läuft die gesamte Anwendung in einem Container. Getrennte Services und unabhängiges Deployment sind Merkmale von Microservices.",
+    "tags": ["architektur", "easy"]
   },
   {
     "id": "b1-q2",
     "section": "B1",
     "sectionTitle": "Containerkomposition (Architektur)",
-    "type": "ordering",
+    "type": "open_text",
     "source": "original",
     "parentId": null,
-    "question": "Ordne die Schichten einer typischen Container-Anwendung von unten nach oben:",
-    "options": [
-      "Anwendungscode",
-      "Container-Runtime (z.B. containerd)",
-      "Betriebssystem-Kernel",
-      "Container-Image"
+    "question": "Warum ist bei einer Web-Applikation die Trennung in Frontend-, Backend- und Datenbank-Container sinnvoll? Nenne zwei Gründe und erkläre sie kurz.",
+    "correctAnswer": "Unabhängige Wartung und separate Skalierung der Komponenten",
+    "keywords": [
+      "wart",
+      "unabhängig",
+      "skalier",
+      "backend",
+      "frontend",
+      "datenbank",
+      "isolier",
+      "sicher",
+      "stabil",
+      "last"
     ],
-    "correctAnswer": [
-      "Betriebssystem-Kernel",
-      "Container-Runtime (z.B. containerd)",
-      "Container-Image",
-      "Anwendungscode"
-    ],
-    "explanation": "Der Kernel bildet die Basis, darauf läuft die Container-Runtime, Images definieren die Umgebung, und der Anwendungscode läuft innerhalb des Containers.",
-    "tags": ["architektur"]
+    "explanation": "Frontend und Backend können unabhängig voneinander gewartet und aktualisiert werden. Das Backend kann bei hoher Last separat skaliert werden. Die Datenbank bleibt isoliert, was Stabilität und Sicherheit erhöht.",
+    "tags": ["architektur", "medium"]
   },
   {
     "id": "b1-q3",
     "section": "B1",
     "sectionTitle": "Containerkomposition (Architektur)",
-    "type": "multiple_choice",
+    "type": "multiple_select",
     "source": "original",
     "parentId": null,
-    "question": "Welche Komponente ist typischerweise für die Service-zu-Service-Kommunikation in einer Container-Architektur zuständig?",
+    "question": "Welche Aussagen treffen auf eine erweiterte Microservice-Architektur zu?",
     "options": [
-      "Dockerfile",
-      "API-Gateway oder Service Mesh",
-      "Git Repository",
-      "Build-Server allein"
+      "Jeder Service kann separat skaliert werden",
+      "Die Architektur ist weniger komplex als ein Monolith",
+      "Zusätzliche Services wie ein Auth-Service sind möglich",
+      "Der Betriebs- und Konfigurationsaufwand ist höher",
+      "Es wird immer nur ein Container verwendet"
     ],
-    "correctAnswer": "API-Gateway oder Service Mesh",
-    "explanation": "In verteilten Architekturen regeln API-Gateways und Service Meshes (z.B. Istio) Routing, Sicherheit und Observability zwischen Services.",
-    "tags": ["architektur", "networking"]
-  },
-  {
-    "id": "b1-q4",
-    "section": "B1",
-    "sectionTitle": "Containerkomposition (Architektur)",
-    "type": "open_text",
-    "source": "original",
-    "parentId": null,
-    "question": "Was versteht man unter «Sidecar-Pattern» in einer Container-Komposition?",
-    "correctAnswer": "Hilfscontainer neben dem Hauptcontainer",
-    "keywords": ["sidecar", "hilfs", "neben", "zusätzlich", "container", "proxy", "logging", "helper", "begleit"],
-    "explanation": "Beim Sidecar-Pattern läuft ein Hilfs-Container im selben Pod/Deployment neben dem Haupt-Container, z.B. für Logging, Proxy oder Monitoring.",
-    "tags": ["architektur", "patterns"]
+    "correctAnswer": [
+      "Jeder Service kann separat skaliert werden",
+      "Zusätzliche Services wie ein Auth-Service sind möglich",
+      "Der Betriebs- und Konfigurationsaufwand ist höher"
+    ],
+    "explanation": "Microservices ermöglichen separate Skalierung und zusätzliche Dienste, erhöhen aber Komplexität und Betriebsaufwand im Vergleich zu einem Monolithen.",
+    "tags": ["architektur", "microservices", "medium"]
   }
 ]

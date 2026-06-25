@@ -328,8 +328,43 @@
 }
 
 .question-text {
-  margin-bottom: 1rem;
+  margin-bottom: 0;
   line-height: 1.45;
+}
+
+.question-text-block {
+  margin-bottom: 1rem;
+}
+
+.question-text-block .question-text {
+  margin-bottom: 0.75rem;
+}
+
+.question-code {
+  margin: 0.75rem 0;
+  padding: 0.85rem 1rem;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: var(--bg);
+  color: var(--text-h);
+  font-family: 'Consolas', 'Courier New', monospace;
+  font-size: 0.85rem;
+  line-height: 1.5;
+  white-space: pre;
+  overflow-x: auto;
+}
+
+.question-code code {
+  font-family: inherit;
+}
+
+.question-image {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  margin: 0.75rem 0;
+  border: 1px solid var(--border);
+  border-radius: 8px;
 }
 
 .question-options {

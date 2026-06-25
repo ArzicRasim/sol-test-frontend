@@ -1,5 +1,6 @@
 export default function MultipleSelect({
   question,
+  options,
   value,
   onChange,
   disabled,
@@ -9,6 +10,7 @@ export default function MultipleSelect({
   const correct = Array.isArray(question.correctAnswer)
     ? question.correctAnswer
     : [question.correctAnswer]
+  const displayOptions = options ?? question.options ?? []
 
   function toggle(option) {
     if (disabled) return
@@ -22,7 +24,7 @@ export default function MultipleSelect({
   return (
     <div className="question-options">
       <p className="hint">Mehrere Antworten möglich</p>
-      {(question.options ?? []).map((option) => {
+      {displayOptions.map((option) => {
         const isSelected = selected.includes(option)
         const isCorrectOption = correct.includes(option)
         let className = 'option-btn'

@@ -36,4 +36,4 @@ Fragentypen: `multiple_choice`, `multiple_select`, `open_text`, `ordering`, `mat
 
 ## Hinweis zu PDF-Inhalten
 
-Die Fragen basieren auf der Struktur des Modul-347-Prüfungsfragen-PDFs. Bildbasierte Seiten wurden fachlich passend transkribiert — bitte Inhalte bei Bedarf in den JSON-Dateien anpassen.
+Die 30 Originalfragen (je 3 pro Abschnitt A–F) entsprechen dem Modul-347-Prüfungsfragen-PDF. Varianten werden mit `node scripts/generate-variants.mjs` aus den Originalen erzeugt (2 pro Frage).

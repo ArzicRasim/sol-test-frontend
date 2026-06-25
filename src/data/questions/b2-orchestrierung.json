@@ -2,62 +2,70 @@
   {
     "id": "b2-q1",
     "section": "B2",
-    "sectionTitle": "Container-Orchestrierung",
-    "type": "multiple_choice",
+    "sectionTitle": "Docker-Technologie und lokale Entwicklung",
+    "type": "multiple_select",
     "source": "original",
     "parentId": null,
-    "question": "Was ist die kleinste deploybare Einheit in Kubernetes?",
-    "options": ["Node", "Pod", "Cluster", "Deployment"],
-    "correctAnswer": "Pod",
-    "explanation": "Ein Pod ist die kleinste Einheit in Kubernetes und kann einen oder mehrere Container enthalten, die Ressourcen teilen.",
-    "tags": ["kubernetes", "pod"]
+    "question": "Welche der folgenden Bestandteile gehören zur Container-Technologie und werden beim Arbeiten mit Docker verwendet?",
+    "options": [
+      "Docker Engine",
+      "Dockerfile",
+      "Container Image",
+      "Hypervisor",
+      "Container Registry"
+    ],
+    "correctAnswer": [
+      "Docker Engine",
+      "Dockerfile",
+      "Container Image",
+      "Container Registry"
+    ],
+    "explanation": "Docker Engine, Dockerfile, Container Images und Container Registry sind zentrale Docker-Bestandteile. Ein Hypervisor wird für VMs verwendet, nicht für Container.",
+    "tags": ["docker", "easy"]
   },
   {
     "id": "b2-q2",
     "section": "B2",
-    "sectionTitle": "Container-Orchestrierung",
-    "type": "multiple_choice",
+    "sectionTitle": "Docker-Technologie und lokale Entwicklung",
+    "type": "open_text",
     "source": "original",
     "parentId": null,
-    "question": "Welche Kubernetes-Ressource stellt einen stabilen Netzwerk-Endpunkt für Pods bereit?",
-    "options": ["ConfigMap", "Service", "Secret", "PersistentVolume"],
-    "correctAnswer": "Service",
-    "explanation": "Ein Service bietet eine stabile IP/DNS-Adresse und load-balanced Zugriff auf eine Gruppe von Pods.",
-    "tags": ["kubernetes", "service"]
+    "question": "Ein Entwickler erstellt eine containerisierte Webanwendung mit Frontend, Backend und Datenbank. Beschreibe: (1) in welcher Reihenfolge die Anwendung typischerweise entwickelt und betrieben wird, (2) warum docker compose für die lokale Entwicklung sinnvoll ist, (3) welche Probleme ohne gemeinsames lokales Testen auftreten könnten.",
+    "correctAnswer": "Entwicklung → Dockerfile → Image bauen → compose starten → Betrieb; compose testet Services gemeinsam",
+    "keywords": [
+      "dockerfile",
+      "image",
+      "bauen",
+      "compose",
+      "lokal",
+      "test",
+      "frontend",
+      "backend",
+      "datenbank",
+      "port",
+      "netzwerk",
+      "verbind"
+    ],
+    "explanation": "Zuerst Entwicklung und Dockerfile, dann Image-Build, gemeinsames Starten mit docker compose und Test. Ohne lokales Testen können Port-, Netzwerk- oder Datenbankverbindungsprobleme erst im Betrieb auffallen.",
+    "tags": ["docker", "compose", "hard"]
   },
   {
     "id": "b2-q3",
     "section": "B2",
-    "sectionTitle": "Container-Orchestrierung",
-    "type": "multiple_select",
+    "sectionTitle": "Docker-Technologie und lokale Entwicklung",
+    "type": "multiple_choice",
     "source": "original",
     "parentId": null,
-    "question": "Welche Aufgaben übernimmt ein Container-Orchestrator? (Mehrere Antworten)",
+    "question": "Warum sollte in einem Aufbau mit Reverse Proxy, Backend und Datenbank nur der Reverse Proxy direkt aus dem Internet erreichbar sein?",
+    "image": "B2E.png",
     "options": [
-      "Automatisches Scheduling von Containern auf Nodes",
-      "Self-Healing bei ausgefallenen Containern",
-      "Erstellung von Dockerfiles",
-      "Horizontale Skalierung von Workloads"
+      "Damit Backend und Datenbank schneller laufen",
+      "Damit nur notwendige Ports öffentlich erreichbar sind und interne Services geschützt bleiben",
+      "Damit alle Container dieselbe IP-Adresse nutzen",
+      "Damit keine Kommunikation zwischen den Containern möglich ist"
     ],
-    "correctAnswer": [
-      "Automatisches Scheduling von Containern auf Nodes",
-      "Self-Healing bei ausgefallenen Containern",
-      "Horizontale Skalierung von Workloads"
-    ],
-    "explanation": "Orchestratoren wie Kubernetes verwalten Scheduling, Skalierung und Wiederherstellung. Dockerfiles werden separat erstellt.",
-    "tags": ["kubernetes", "orchestration"]
-  },
-  {
-    "id": "b2-q4",
-    "section": "B2",
-    "sectionTitle": "Container-Orchestrierung",
-    "type": "open_text",
-    "source": "original",
-    "parentId": null,
-    "question": "Was bewirkt ein Horizontal Pod Autoscaler (HPA) in Kubernetes?",
-    "correctAnswer": "Skaliert Pods basierend auf Metriken",
-    "keywords": ["skalier", "pods", "automatisch", "metrik", "last", "cpu", "horizontal", "anzahl", "replik"],
-    "explanation": "Der HPA passt die Anzahl der Pod-Replikas automatisch anhand von Metriken wie CPU-Auslastung oder custom metrics an.",
-    "tags": ["kubernetes", "hpa"]
+    "correctAnswer": "Damit nur notwendige Ports öffentlich erreichbar sind und interne Services geschützt bleiben",
+    "explanation": "Nur der Reverse Proxy sollte öffentlich erreichbar sein. Backend und Datenbank bleiben intern und sind so vor direktem Internetzugriff geschützt.",
+    "tags": ["netzwerk", "sicherheit", "easy"]
   }
 ]

@@ -3,89 +3,65 @@
     "id": "c1-q1",
     "section": "C1",
     "sectionTitle": "Containerdienstleister auswählen",
-    "type": "multiple_choice",
+    "type": "open_text",
     "source": "original",
     "parentId": null,
-    "question": "Welches Kriterium hat laut Bewertungsmatrix die höchste Gewichtung?",
-    "options": ["Pricing", "Service Discovery", "Security", "Monitoring"],
-    "correctAnswer": "Security",
-    "explanation": "Security hat die Gewichtung 5 — Sicherheitslücken können zu Datenverlust oder unbefugtem Zugriff führen.",
-    "tags": ["security", "matrix"]
+    "question": "Welche zwei zusätzlichen Dienste sollte ein Containerdienstleister bereitstellen, damit eine containerisierte Anwendung produktiv betrieben werden kann? Begründe kurz.",
+    "image": "C1G.png",
+    "correctAnswer": "Load Balancer und Container Registry",
+    "keywords": [
+      "load balancer",
+      "registry",
+      "orchestrier",
+      "kubernetes",
+      "verfügbar",
+      "image",
+      "skalier",
+      "verteil",
+      "speicher"
+    ],
+    "explanation": "Load Balancer verteilt Anfragen auf mehrere Instanzen (Verfügbarkeit/Performance). Container Registry speichert und verteilt Images zentral. Optional: Orchestrierung (z. B. Kubernetes) für automatisches Deployment und Skalierung.",
+    "tags": ["pca", "hard"]
   },
   {
     "id": "c1-q2",
     "section": "C1",
     "sectionTitle": "Containerdienstleister auswählen",
-    "type": "multiple_choice",
+    "type": "multiple_select",
     "source": "original",
     "parentId": null,
-    "question": "Welche Gewichtung hat das Kriterium «Monitoring» in der Entscheidungsmatrix?",
-    "options": ["2", "3", "4", "5"],
-    "correctAnswer": "4",
-    "explanation": "Monitoring hat Gewichtung 4, da Fehler und Leistungsprobleme früh erkannt werden sollen.",
-    "tags": ["monitoring", "matrix"]
+    "question": "Welche Aussagen über Public-Cloud-Anbieter sind korrekt?",
+    "options": [
+      "Ressourcen können dynamisch skaliert werden",
+      "Man hat vollständige physische Kontrolle über Server",
+      "Dienste sind meist weltweit verfügbar",
+      "Kosten entstehen oft nutzungsabhängig"
+    ],
+    "correctAnswer": [
+      "Ressourcen können dynamisch skaliert werden",
+      "Dienste sind meist weltweit verfügbar",
+      "Kosten entstehen oft nutzungsabhängig"
+    ],
+    "explanation": "Public Cloud bietet dynamische Skalierung, globale Verfügbarkeit und nutzungsabhängige Kosten. Physische Kontrolle über Server hat man bei eigener Hardware, nicht in der Public Cloud.",
+    "tags": ["cloud", "medium"]
   },
   {
     "id": "c1-q3",
     "section": "C1",
     "sectionTitle": "Containerdienstleister auswählen",
-    "type": "ordering",
-    "source": "original",
-    "parentId": null,
-    "question": "Ordne die Kriterien nach Gewichtung absteigend (höchste zuerst):",
-    "options": ["Pricing", "Service Discovery", "Security", "Monitoring", "DevOps Tool Integrationen"],
-    "correctAnswer": ["Security", "Monitoring", "DevOps Tool Integrationen", "Service Discovery", "Pricing"],
-    "explanation": "Reihenfolge: Security (5), Monitoring (4), DevOps Tool Integrationen (4), Service Discovery (3), Pricing (2).",
-    "tags": ["matrix", "ordering"]
-  },
-  {
-    "id": "c1-q4",
-    "section": "C1",
-    "sectionTitle": "Containerdienstleister auswählen",
     "type": "multiple_choice",
     "source": "original",
     "parentId": null,
-    "question": "Was umfasst das Kriterium «Security» in der Bewertungsmatrix?",
+    "question": "Betrachte die Entscheidungsmatrix zwischen GKE, Azure Container Service (ACS) und Amazon ECS mit folgender Gewichtung: Security (5), Monitoring (4), DevOps Tool Integrationen (4), Pricing (2), Service Discovery (3). Welcher Anbieter erreicht die höchste Gesamtpunktzahl?",
+    "image": "C1E.png",
     "options": [
-      "Nur die Netzwerkgeschwindigkeit",
-      "Rollen, Berechtigungen, Verschlüsselung und Secrets-Management",
-      "Ausschliesslich die Anzahl verfügbarer Regionen",
-      "Nur die Preisgestaltung des Anbieters"
+      "Google Kubernetes Engine (GKE) — 85 Punkte",
+      "Microsoft Azure Container Service (ACS)",
+      "Amazon Elastic Container Service (ECS) — 88 Punkte",
+      "Alle drei Anbieter erreichen dieselbe Punktzahl"
     ],
-    "correctAnswer": "Rollen, Berechtigungen, Verschlüsselung und Secrets-Management",
-    "explanation": "Security umfasst Schutzmechanismen wie IAM/Rollen, Verschlüsselung und sicheres Secrets-Management.",
-    "tags": ["security"]
-  },
-  {
-    "id": "c1-q5",
-    "section": "C1",
-    "sectionTitle": "Containerdienstleister auswählen",
-    "type": "matrix",
-    "source": "original",
-    "parentId": null,
-    "question": "Weise den Kriterien die korrekte Gewichtung aus der Matrix zu:",
-    "matrixItems": ["Security", "Monitoring", "DevOps Tool Integrationen", "Service Discovery", "Pricing"],
-    "correctAnswer": {
-      "Security": 5,
-      "Monitoring": 4,
-      "DevOps Tool Integrationen": 4,
-      "Service Discovery": 3,
-      "Pricing": 2
-    },
-    "explanation": "Die Matrix gewichtet Security am höchsten (5), gefolgt von Monitoring und DevOps (je 4), Service Discovery (3) und Pricing (2).",
-    "tags": ["matrix"]
-  },
-  {
-    "id": "c1-q6",
-    "section": "C1",
-    "sectionTitle": "Containerdienstleister auswählen",
-    "type": "open_text",
-    "source": "original",
-    "parentId": null,
-    "question": "Warum hat «Pricing» in der Matrix die niedrigste Gewichtung?",
-    "correctAnswer": "Kosten stehen hinter Sicherheit und Funktionalität zurück",
-    "keywords": ["sicherheit", "funktional", "kosten", "zurück", "wichtiger", "priorität", "produktiv", "qualität"],
-    "explanation": "Laut Begründung sind Kosten relevant, stehen bei produktiven Container-Anwendungen aber hinter Sicherheit und Funktionalität.",
-    "tags": ["pricing", "matrix"]
+    "correctAnswer": "Amazon Elastic Container Service (ECS) — 88 Punkte",
+    "explanation": "GKE: (5×5)+(4×5)+(4×5)+(2×4)+(3×4) = 85 Punkte. Azure: (5×3)+(4×4)+(4×4)+(2×4)+(3×4) = 67 Punkte. AWS ECS: (5×5)+(4×5)+(4×5)+(2×4)+(3×5) = 88 Punkte. AWS erreicht die höchste Punktzahl.",
+    "tags": ["matrix", "entscheidung", "hard"]
   }
 ]

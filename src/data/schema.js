@@ -15,9 +15,49 @@
  * @property {string} explanation
  * @property {string[]} [tags]
  * @property {string[]} [keywords]
+ * @property {string} [image]
+ * @property {string} [codeSnippet]
  * @property {Record<string, number>} [matrixWeights]
  * @property {string[]} [matrixItems]
  */
+
+/**
+ * @param {string} id
+ */
+export function seedFromId(id) {
+  return id.split('').reduce((acc, char) => acc + char.charCodeAt(0), 0)
+}
+
+/**
+ * @param {T[]} items
+ * @param {number} seed
+ * @returns {T[]}
+ * @template {unknown} T
+ */
+export function shuffleWithSeed(items, seed) {
+  const copy = [...items]
+  let s = seed
+  for (let i = copy.length - 1; i > 0; i--) {
+    s = (s * 1103515245 + 12345) & 0x7fffffff
+    const j = s % (i + 1)
+    ;[copy[i], copy[j]] = [copy[j], copy[i]]
+  }
+  return copy
+}
+
+/**
+ * @param {Question} question
+ * @returns {string[]}
+ */
+export function getShuffledOptions(question) {
+  const options = question.options ?? []
+  if (
+    !['multiple_choice', 'multiple_select', 'ordering'].includes(question.type)
+  ) {
+    return options
+  }
+  return shuffleWithSeed(options, seedFromId(question.id))
+}
 
 /**
  * @param {unknown} question

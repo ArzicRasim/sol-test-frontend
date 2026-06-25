@@ -1,15 +1,16 @@
 export default function MultipleChoice({
   question,
+  options,
   value,
   onChange,
   disabled,
   showResult,
 }) {
-  const options = question.options ?? []
+  const displayOptions = options ?? question.options ?? []
 
   return (
     <div className="question-options">
-      {options.map((option) => {
+      {displayOptions.map((option) => {
         const isSelected = value === option
         const isCorrectOption = option === question.correctAnswer ||
           (Array.isArray(question.correctAnswer) && question.correctAnswer.includes(option))

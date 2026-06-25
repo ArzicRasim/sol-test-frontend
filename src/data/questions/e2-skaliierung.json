@@ -2,73 +2,65 @@
   {
     "id": "e2-q1",
     "section": "E2",
-    "sectionTitle": "Praxis: Betrieb & Skalierung in der Cloud",
+    "sectionTitle": "Storage, Skalierung und Metadaten",
     "type": "multiple_choice",
     "source": "original",
     "parentId": null,
-    "question": "Welches Tool-Paar ist typisch für Monitoring und Logging in Cloud-native Umgebungen?",
+    "question": "Welche Storage-Variante eignet sich für persistente Daten einer Datenbank?",
     "options": [
-      "Prometheus/Grafana + ELK/Cloud Logging",
-      "Microsoft Paint + Notepad",
-      "FTP + Telnet",
-      "Nur manuelle Log-Dateien ohne Aggregation"
+      "Temporärer Container-Speicher",
+      "Persistent Volume",
+      "RAM",
+      "Log-Datei"
     ],
-    "correctAnswer": "Prometheus/Grafana + ELK/Cloud Logging",
-    "explanation": "Prometheus/Grafana für Metriken, ELK Stack oder Cloud-Logging-Dienste für zentralisierte Logs.",
-    "tags": ["monitoring", "logging"]
+    "correctAnswer": "Persistent Volume",
+    "explanation": "Persistent Volumes speichern Daten unabhängig vom Container-Lebenszyklus — essentiell für Datenbanken.",
+    "tags": ["storage", "medium"]
   },
   {
     "id": "e2-q2",
     "section": "E2",
-    "sectionTitle": "Praxis: Betrieb & Skalierung in der Cloud",
-    "type": "multiple_choice",
+    "sectionTitle": "Storage, Skalierung und Metadaten",
+    "type": "multiple_select",
     "source": "original",
     "parentId": null,
-    "question": "Was ermöglicht «Rolling Updates» bei Kubernetes Deployments?",
+    "question": "Welche Möglichkeiten zur Skalierung gibt es in der Cloud?",
     "options": [
-      "Sofortiges Löschen aller Pods ohne Ersatz",
-      "Schrittweises Ersetzen alter Pods durch neue Versionen ohne Downtime",
-      "Manuelles SSH auf jeden Node",
-      "Deaktivierung des Load Balancers"
+      "Vertikale Skalierung",
+      "Horizontale Skalierung",
+      "Löschen von Instanzen",
+      "Auto-Scaling"
     ],
-    "correctAnswer": "Schrittweises Ersetzen alter Pods durch neue Versionen ohne Downtime",
-    "explanation": "Rolling Updates ersetzen Pods graduell, sodass die Anwendung während des Deployments verfügbar bleibt.",
-    "tags": ["kubernetes", "deployment"]
+    "correctAnswer": [
+      "Vertikale Skalierung",
+      "Horizontale Skalierung",
+      "Auto-Scaling"
+    ],
+    "explanation": "Vertikale Skalierung (mehr Ressourcen pro Instanz), horizontale Skalierung (mehr Instanzen) und Auto-Scaling sind gängige Cloud-Skalierungsstrategien. Instanzen löschen reduziert Kapazität, ist aber keine Skalierungsstrategie.",
+    "tags": ["skalierung", "easy"]
   },
   {
     "id": "e2-q3",
     "section": "E2",
-    "sectionTitle": "Praxis: Betrieb & Skalierung in der Cloud",
+    "sectionTitle": "Storage, Skalierung und Metadaten",
     "type": "open_text",
     "source": "original",
     "parentId": null,
-    "question": "Was versteht man unter «High Availability» (HA) im Container-Betrieb?",
-    "correctAnswer": "Hohe Verfügbarkeit durch Redundanz",
-    "keywords": ["verfügbar", "redundanz", "ausfall", "uptime", "replik", "failover", "hoch"],
-    "explanation": "HA bedeutet, dass der Dienst trotz Ausfällen einzelner Komponenten verfügbar bleibt — durch Replikation und Failover.",
-    "tags": ["ha", "betrieb"]
-  },
-  {
-    "id": "e2-q4",
-    "section": "E2",
-    "sectionTitle": "Praxis: Betrieb & Skalierung in der Cloud",
-    "type": "ordering",
-    "source": "original",
-    "parentId": null,
-    "question": "Ordne die Eskalationsstufen bei einem Produktions-Incident:",
-    "options": [
-      "Alert auslösen / Problem erkennen",
-      "Ursache analysieren (Logs, Metriken)",
-      "Fix deployen oder Rollback",
-      "Post-Mortem dokumentieren"
+    "question": "Auf einer Cloud-Instanz werden folgende Metadaten angezeigt. Welche Art von Informationen werden hier angezeigt und wofür können sie verwendet werden?",
+    "codeSnippet": "{\n  \"instance-id\": \"vm-01\",\n  \"region\": \"europe-west6\",\n  \"public-ip\": \"34.65.10.20\"\n}",
+    "correctAnswer": "Metadaten der Cloud-Instanz für Identifikation, Region und Netzwerkzugriff",
+    "keywords": [
+      "metadaten",
+      "instance",
+      "region",
+      "ip",
+      "identifik",
+      "verwalt",
+      "monitor",
+      "automat",
+      "standort"
     ],
-    "correctAnswer": [
-      "Alert auslösen / Problem erkennen",
-      "Ursache analysieren (Logs, Metriken)",
-      "Fix deployen oder Rollback",
-      "Post-Mortem dokumentieren"
-    ],
-    "explanation": "Incident-Response: Erkennen → Analysieren → Beheben → Lernen und dokumentieren.",
-    "tags": ["incident", "betrieb"]
+    "explanation": "Es handelt sich um Metadaten der Cloud-Instanz: instance-id (Identifikation), region (Standort), public-ip (Netzwerkzugriff). Nützlich für Verwaltung, Monitoring und automatisierte Konfiguration.",
+    "tags": ["cloud", "metadaten", "medium"]
   }
 ]

@@ -1,6 +1,7 @@
-import { useCallback, useState } from 'react'
+import { useCallback, useMemo, useState } from 'react'
 import {
   evaluateAnswer,
+  getShuffledOptions,
   matchOpenTextKeywords,
 } from '../data/schema.js'
 import MultipleChoice from './MultipleChoice.jsx'
@@ -8,6 +9,7 @@ import MultipleSelect from './MultipleSelect.jsx'
 import OpenText from './OpenText.jsx'
 import OrderingQuestion from './OrderingQuestion.jsx'
 import MatrixQuestion from './MatrixQuestion.jsx'
+import QuestionText from './QuestionText.jsx'
 
 /**
  * @param {Object} props
@@ -17,8 +19,14 @@ import MatrixQuestion from './MatrixQuestion.jsx'
  */
 export default function QuestionCard({ question, mode, onSubmit }) {
   const isLearn = mode === 'learn'
+  const shuffledOptions = useMemo(
+    () => getShuffledOptions(question),
+    [question],
+  )
   const [revealed, setRevealed] = useState(isLearn)
-  const [answer, setAnswer] = useState(getInitialAnswer(question))
+  const [answer, setAnswer] = useState(() =>
+    getInitialAnswer(question, shuffledOptions),
+  )
   const [showResult, setShowResult] = useState(isLearn)
   const [isCorrect, setIsCorrect] = useState(false)
   const [keywordResult, setKeywordResult] = useState(null)
@@ -64,6 +72,7 @@ export default function QuestionCard({ question, mode, onSubmit }) {
         return (
           <MultipleChoice
             {...common}
+            options={shuffledOptions}
             value={answer}
             onChange={setAnswer}
           />
@@ -72,6 +81,7 @@ export default function QuestionCard({ question, mode, onSubmit }) {
         return (
           <MultipleSelect
             {...common}
+            options={shuffledOptions}
             value={answer}
             onChange={setAnswer}
           />
@@ -129,7 +139,11 @@ export default function QuestionCard({ question, mode, onSubmit }) {
         )}
         <span className="question-type">{question.type.replace('_', ' ')}</span>
       </div>
-      <h3 className="question-text">{question.question}</h3>
+      <QuestionText
+        question={question.question}
+        codeSnippet={question.codeSnippet}
+        image={question.image}
+      />
       {renderInput()}
 
       {!isLearn && !showResult && (
@@ -190,13 +204,16 @@ export default function QuestionCard({ question, mode, onSubmit }) {
   )
 }
 
-/** @param {import('../data/schema.js').Question} question */
-function getInitialAnswer(question) {
+/**
+ * @param {import('../data/schema.js').Question} question
+ * @param {string[]} shuffledOptions
+ */
+function getInitialAnswer(question, shuffledOptions) {
   switch (question.type) {
     case 'multiple_select':
       return []
     case 'ordering':
-      return [...(question.options ?? [])]
+      return [...shuffledOptions]
     case 'matrix':
       return Object.fromEntries(
         (question.matrixItems ?? []).map((item) => [item, 1]),

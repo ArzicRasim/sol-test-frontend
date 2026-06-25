@@ -6,29 +6,39 @@
     "type": "multiple_choice",
     "source": "original",
     "parentId": null,
-    "question": "Was ist der Hauptunterschied zwischen einem Container und einer virtuellen Maschine (VM)?",
+    "question": "Was ist ein zentraler Unterschied zwischen Containern und virtuellen Maschinen?",
     "options": [
-      "Container virtualisieren die gesamte Hardware inklusive Guest-OS",
-      "Container teilen sich den Kernel des Host-Systems und isolieren Prozesse auf Anwendungsebene",
-      "VMs sind immer schneller als Container",
-      "Container benötigen immer einen Hypervisor"
+      "Container benötigen immer ein eigenes Betriebssystem",
+      "Virtuelle Maschinen teilen sich den Kernel des Host-Systems",
+      "Container virtualisieren auf Betriebssystem-Ebene",
+      "Virtuelle Maschinen starten schneller als Container"
     ],
-    "correctAnswer": "Container teilen sich den Kernel des Host-Systems und isolieren Prozesse auf Anwendungsebene",
-    "explanation": "Container nutzen Namespaces und cgroups des Host-Kernels. VMs emulieren dagegen eine komplette Hardware inklusive eigenem Betriebssystem.",
-    "tags": ["docker", "grundlagen"]
+    "correctAnswer": "Container virtualisieren auf Betriebssystem-Ebene",
+    "explanation": "Container nutzen den Kernel des Host-Systems und isolieren Prozesse auf Betriebssystem-Ebene. VMs virtualisieren hingegen die gesamte Hardware inklusive eigenem Gast-Betriebssystem.",
+    "tags": ["grundlagen", "easy"]
   },
   {
     "id": "a-q2",
     "section": "A",
     "sectionTitle": "Grundlagen",
-    "type": "multiple_choice",
+    "type": "multiple_select",
     "source": "original",
     "parentId": null,
-    "question": "Welche Datei definiert typischerweise, wie ein Docker-Image gebaut wird?",
-    "options": ["docker-compose.yml", "Dockerfile", "package.json", "kubeconfig"],
-    "correctAnswer": "Dockerfile",
-    "explanation": "Ein Dockerfile enthält Anweisungen (FROM, RUN, COPY, CMD) zum Erstellen eines Images Schritt für Schritt.",
-    "tags": ["docker", "dockerfile"]
+    "question": "Welche Anforderungen sprechen typischerweise für den Einsatz von Containern bei einem IT-Dienst?",
+    "options": [
+      "Konsistente Laufzeitumgebungen",
+      "Schnelle Bereitstellung und Startzeit",
+      "Vollständige Virtualisierung eines Betriebssystems pro Dienst",
+      "Einfache Skalierung mehrerer Instanzen",
+      "Direkter Zugriff auf physische Hardware ohne Isolation"
+    ],
+    "correctAnswer": [
+      "Konsistente Laufzeitumgebungen",
+      "Schnelle Bereitstellung und Startzeit",
+      "Einfache Skalierung mehrerer Instanzen"
+    ],
+    "explanation": "Container bieten konsistente Umgebungen, schnelles Starten und einfache Skalierung. Eine vollständige OS-Virtualisierung pro Dienst oder direkter Hardwarezugriff ohne Isolation sind typische Gegenargumente.",
+    "tags": ["grundlagen", "medium"]
   },
   {
     "id": "a-q3",
@@ -37,32 +47,21 @@
     "type": "open_text",
     "source": "original",
     "parentId": null,
-    "question": "Nennen Sie zwei Vorteile von Containern gegenüber klassischen Deployment-Methoden.",
-    "correctAnswer": "Portabilität und Konsistenz",
-    "keywords": ["portabilität", "portable", "konsistenz", "isolation", "isolation", "skalier", "schnell", "ressourcen", "deployment", "umgebung"],
-    "explanation": "Typische Vorteile: Portabilität zwischen Umgebungen, konsistente Laufzeit, schnelleres Starten, effizientere Ressourcennutzung und bessere Isolation.",
-    "tags": ["grundlagen"]
-  },
-  {
-    "id": "a-q4",
-    "section": "A",
-    "sectionTitle": "Grundlagen",
-    "type": "multiple_select",
-    "source": "original",
-    "parentId": null,
-    "question": "Welche Aussagen über Docker-Images sind korrekt? (Mehrere Antworten möglich)",
-    "options": [
-      "Images sind unveränderlich (immutable) und werden in Layern gespeichert",
-      "Ein laufender Container ist eine Instanz eines Images",
-      "Images können nur auf Linux-Systemen erstellt werden",
-      "Images werden in Registries wie Docker Hub gespeichert und geteilt"
+    "question": "Nenne zwei Schwachstellen eines Dienstes, bei dem Frontend und Backend gemeinsam in einem Container betrieben werden, und erkläre kurz, wie diese durch eine Container-Aufteilung verbessert werden können.",
+    "correctAnswer": "Wartbarkeit und Skalierung verbessern sich durch Aufteilung in mehrere Container",
+    "keywords": [
+      "wartbar",
+      "skalier",
+      "unabhängig",
+      "aktualis",
+      "komponent",
+      "aufteil",
+      "container",
+      "frontend",
+      "backend",
+      "gesamt"
     ],
-    "correctAnswer": [
-      "Images sind unveränderlich (immutable) und werden in Layern gespeichert",
-      "Ein laufender Container ist eine Instanz eines Images",
-      "Images werden in Registries wie Docker Hub gespeichert und geteilt"
-    ],
-    "explanation": "Docker-Images sind layer-basiert und immutable. Container sind lauffähige Instanzen. Registries dienen der Verteilung. Multi-Platform-Builds ermöglichen Images auch für verschiedene Architekturen.",
-    "tags": ["docker", "images"]
+    "explanation": "Durch die gemeinsame Ausführung wird die Wartbarkeit erschwert, da jede Änderung den gesamten Container betrifft. Zudem ist die Skalierung eingeschränkt. Durch eine Aufteilung können Komponenten unabhängig aktualisiert und gezielt skaliert werden.",
+    "tags": ["grundlagen", "hard"]
   }
 ]

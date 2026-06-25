@@ -2,68 +2,76 @@
   {
     "id": "d1-q1",
     "section": "D1",
-    "sectionTitle": "Praxis: Container in der Entwicklung",
-    "type": "multiple_choice",
+    "sectionTitle": "Praxis mit Containern in der Entwicklung",
+    "type": "ordering",
     "source": "original",
     "parentId": null,
-    "question": "Welcher Befehl startet alle Services aus einer docker-compose.yml?",
-    "options": ["docker build .", "docker compose up", "kubectl apply -f", "docker rm -f"],
-    "correctAnswer": "docker compose up",
-    "explanation": "`docker compose up` startet die in der Compose-Datei definierten Services und erstellt das Netzwerk.",
-    "tags": ["docker", "compose"]
+    "question": "Du möchtest mit Docker einen NGINX-Webdienst als Container starten (Name: web-demo, Port 8080→80). Ordne die Docker-Befehle in der richtigen Reihenfolge:",
+    "options": [
+      "docker pull nginx",
+      "docker run -d --name web-demo -p 8080:80 nginx",
+      "docker ps",
+      "docker logs web-demo",
+      "docker stop web-demo",
+      "docker rm web-demo"
+    ],
+    "correctAnswer": [
+      "docker pull nginx",
+      "docker run -d --name web-demo -p 8080:80 nginx",
+      "docker ps",
+      "docker logs web-demo",
+      "docker stop web-demo",
+      "docker rm web-demo"
+    ],
+    "explanation": "pull lädt das Image, run startet den Container, ps prüft den Status, logs zeigt Ausgaben, stop beendet und rm löscht den Container.",
+    "tags": ["docker", "hard"]
   },
   {
     "id": "d1-q2",
     "section": "D1",
-    "sectionTitle": "Praxis: Container in der Entwicklung",
-    "type": "multiple_choice",
+    "sectionTitle": "Praxis mit Containern in der Entwicklung",
+    "type": "open_text",
     "source": "original",
     "parentId": null,
-    "question": "Was ist der Zweck eines Volumes in Docker Compose?",
-    "options": [
-      "CPU-Limit setzen",
-      "Persistente Datenspeicherung ausserhalb des Container-Lebenszyklus",
-      "Container automatisch skalieren",
-      "Netzwerk-Routing konfigurieren"
+    "question": "In der folgenden fehlerhaften docker-compose.yml startet der Webdienst nicht korrekt. Finde mindestens drei Fehler und beschreibe die Korrekturen:",
+    "codeSnippet": "services:\n  web:\n    image: nginx:alpine\n    container_name: d1f-web\n    port: \"8080:80\"\n    restart: unless-stopped\n    volumes:\n      - ./wrong-index.html:/usr/share/nginx/html/index.html\n    enviroment:\n      - APP_ENV=dev",
+    "correctAnswer": "ports statt port, vollständiges Port-Mapping, environment statt enviroment",
+    "keywords": [
+      "ports",
+      "port",
+      "8080",
+      "environment",
+      "enviroment",
+      "mapping",
+      "volume",
+      "restart",
+      "fehler"
     ],
-    "correctAnswer": "Persistente Datenspeicherung ausserhalb des Container-Lebenszyklus",
-    "explanation": "Volumes ermöglichen persistente Daten (z.B. DB-Daten), die beim Neustart des Containers erhalten bleiben.",
-    "tags": ["docker", "volumes"]
+    "explanation": "Fehler: `port` ist falsch (korrekt: `ports`), Port-Mapping unvollständig (korrekt: \"8080:80\"), `enviroment` falsch geschrieben (korrekt: `environment`). Optional: Volume-Pfad prüfen, falls Datei nicht existiert.",
+    "tags": ["compose", "medium"]
   },
   {
     "id": "d1-q3",
     "section": "D1",
-    "sectionTitle": "Praxis: Container in der Entwicklung",
+    "sectionTitle": "Praxis mit Containern in der Entwicklung",
     "type": "open_text",
     "source": "original",
     "parentId": null,
-    "question": "Was bewirkt die Anweisung `EXPOSE 8080` in einem Dockerfile?",
-    "correctAnswer": "Dokumentiert den Port für die Anwendung",
-    "keywords": ["port", "dokument", "8080", "kommunikation", "netzwerk", "hinweis", "metadata"],
-    "explanation": "EXPOSE dokumentiert, welcher Port genutzt wird. Der Port muss trotzdem mit `-p` beim `docker run` gemappt werden.",
-    "tags": ["dockerfile"]
-  },
-  {
-    "id": "d1-q4",
-    "section": "D1",
-    "sectionTitle": "Praxis: Container in der Entwicklung",
-    "type": "ordering",
-    "source": "original",
-    "parentId": null,
-    "question": "Ordne den typischen lokalen Entwicklungs-Workflow:",
-    "options": [
-      "Code ändern und testen",
-      "Dockerfile schreiben",
-      "Image bauen",
-      "Container starten"
+    "question": "Erstelle eine einfache docker-compose.yml für einen Webdienst mit NGINX. Die Konfiguration soll folgende Anforderungen erfüllen: Service heisst web, Image nginx:alpine, Container-Name d1e-web, Port 8080→80, automatischer Neustart (ausser manuell gestoppt). Beschreibe die wichtigsten Abschnitte.",
+    "correctAnswer": "services.web mit image, container_name, ports 8080:80, restart unless-stopped",
+    "keywords": [
+      "services",
+      "web",
+      "nginx",
+      "alpine",
+      "container_name",
+      "ports",
+      "8080",
+      "80",
+      "restart",
+      "unless-stopped"
     ],
-    "correctAnswer": [
-      "Dockerfile schreiben",
-      "Image bauen",
-      "Container starten",
-      "Code ändern und testen"
-    ],
-    "explanation": "Zuerst Dockerfile, dann Build, dann Start. Entwicklung erfolgt iterativ mit erneutem Build bei Änderungen.",
-    "tags": ["workflow"]
+    "explanation": "Korrekte Struktur: services → web → image: nginx:alpine, container_name: d1e-web, ports: \"8080:80\", restart: unless-stopped.",
+    "tags": ["compose", "medium"]
   }
 ]
