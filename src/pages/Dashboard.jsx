@@ -29,7 +29,7 @@ export default function Dashboard() {
           </Link>
           {globalStats.allMastered && (
             <Link to="/exam" className="btn btn-accent">
-              Prüfungssimulation (Varianten)
+              Prüfungssimulation
             </Link>
           )}
         </div>

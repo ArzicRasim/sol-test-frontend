@@ -19,6 +19,7 @@
  * @property {string} [codeSnippet]
  * @property {Record<string, number>} [matrixWeights]
  * @property {string[]} [matrixItems]
+ * @property {string} [competencyCode]
  */
 
 /**

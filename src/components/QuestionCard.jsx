@@ -133,7 +133,10 @@ export default function QuestionCard({ question, mode, onSubmit }) {
   return (
     <article className="question-card">
       <div className="question-meta">
-        <span className="question-section">{question.section}</span>
+        {question.competencyCode && (
+          <span className="question-competency">{question.competencyCode}</span>
+        )}
+        <span className="question-section-title">{question.sectionTitle}</span>
         {question.source === 'variant' && (
           <span className="badge badge-accent">Variante</span>
         )}

@@ -9,6 +9,7 @@ import e1PcaBetrieb from './questions/e1-pca-betrieb.json'
 import e2Skalierung from './questions/e2-skaliierung.json'
 import fQualitaet from './questions/f-qualitaet.json'
 import allVariants from './variants/all-variants.json'
+import { withCompetencyCode } from './competencies.js'
 import { sections, getSectionById } from './sections.js'
 
 /** @type {import('./schema.js').Question[]} */
@@ -28,11 +29,28 @@ const originalQuestions = [
 /** @type {import('./schema.js').Question[]} */
 export const allQuestions = [...originalQuestions, ...allVariants]
 
+/**
+ * @param {import('./schema.js').Question[]} questions
+ * @returns {import('./schema.js').Question[]}
+ */
+function enrichWithCompetencyCodes(questions) {
+  const indexBySection = /** @type {Record<string, number>} */ ({})
+  return questions.map((q) => {
+    const idx = indexBySection[q.section] ?? 0
+    indexBySection[q.section] = idx + 1
+    return withCompetencyCode(q, idx)
+  })
+}
+
+/** @type {import('./schema.js').Question[]} */
+const enrichedOriginalQuestions = enrichWithCompetencyCodes(originalQuestions)
+
 export function getOriginalQuestions(sectionId) {
   if (sectionId === 'all') {
-    return originalQuestions
+    return enrichedOriginalQuestions
   }
-  return originalQuestions.filter((q) => q.section === sectionId)
+  const filtered = originalQuestions.filter((q) => q.section === sectionId)
+  return enrichWithCompetencyCodes(filtered)
 }
 
 export function getVariantQuestions(sectionId) {
@@ -41,8 +59,16 @@ export function getVariantQuestions(sectionId) {
   return variants.filter((q) => q.section === sectionId)
 }
 
+/** Exam: 30 originals in fixed section order A → F, no shuffle. */
+export function getExamQuestions() {
+  return sections.flatMap((section) => getOriginalQuestions(section.id))
+}
+
 export function getQuestionsForMode(sectionId, mode) {
-  if (mode === 'exam' || mode === 'variants') {
+  if (mode === 'exam') {
+    return sectionId === 'all' ? getExamQuestions() : getOriginalQuestions(sectionId)
+  }
+  if (mode === 'variants') {
     return getVariantQuestions(sectionId)
   }
   if (mode === 'weak') {

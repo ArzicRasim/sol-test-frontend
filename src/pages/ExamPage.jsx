@@ -1,21 +1,13 @@
 import { useCallback, useEffect, useMemo, useState } from 'react'
 import { Link } from 'react-router-dom'
-import { getVariantQuestions, originalQuestions } from '../data/index.js'
+import { EXAM_MAX_POINTS, calculateSwissGrade } from '../data/grading.js'
+import { getExamQuestions, originalQuestions } from '../data/index.js'
 import { useProgress } from '../hooks/useProgress.js'
 import QuestionCard from '../components/QuestionCard.jsx'
 import QuizControls from '../components/QuizControls.jsx'
 
-function shuffle(array) {
-  const arr = [...array]
-  for (let i = arr.length - 1; i > 0; i--) {
-    const j = Math.floor(Math.random() * (i + 1))
-    ;[arr[i], arr[j]] = [arr[j], arr[i]]
-  }
-  return arr
-}
-
 function ExamSession({ submitAnswer, onFinish }) {
-  const questions = useMemo(() => shuffle(getVariantQuestions('all')), [])
+  const questions = useMemo(() => getExamQuestions(), [])
   const [currentIndex, setCurrentIndex] = useState(0)
   const [answered, setAnswered] = useState(() => new Set())
   const [sessionScore, setSessionScore] = useState({ correct: 0, total: 0 })
@@ -46,16 +38,20 @@ function ExamSession({ submitAnswer, onFinish }) {
   )
 
   if (finished) {
+    const result = calculateSwissGrade(sessionScore.correct, EXAM_MAX_POINTS)
     return (
       <div className="quiz-summary">
         <h2>Prüfung abgeschlossen</h2>
-        <p>
-          Ergebnis: {sessionScore.correct}/{sessionScore.total} richtig (
-          {sessionScore.total > 0
-            ? Math.round((sessionScore.correct / sessionScore.total) * 100)
-            : 0}
-          %)
+        <p className="exam-result-points">
+          Ergebnis: {result.points} / {result.maxPoints} Punkte
         </p>
+        <p className="exam-grade">
+          Note: <strong>{result.grade.toFixed(1)}</strong>
+          {' '}(Schweizer Notensystem, 6 = best)
+        </p>
+        {!result.passed && (
+          <p className="exam-grade-hint">Bestehensgrenze: Note 4.0</p>
+        )}
         <div className="quiz-summary-actions">
           <Link to="/" className="btn btn-secondary">Dashboard</Link>
           <button type="button" className="btn btn-primary" onClick={onFinish}>
@@ -122,11 +118,13 @@ export default function ExamPage() {
         <Link to="/" className="back-link">← Dashboard</Link>
         <h1>Prüfungssimulation</h1>
         <p>
-          Dieser Modus enthält ausschliesslich <strong>Varianten-Fragen</strong> aus
-          allen Abschnitten — ähnliche Aufgaben zu den Originalfragen.
+          Simuliere die Modul-347-Prüfung mit allen{' '}
+          <strong>{EXAM_MAX_POINTS} Originalfragen</strong> in der offiziellen
+          Reihenfolge (A → F).
         </p>
         <ul className="exam-info">
-          <li>{getVariantQuestions('all').length} Fragen (zufällige Reihenfolge)</li>
+          <li>{EXAM_MAX_POINTS} Fragen (feste Reihenfolge A → F)</li>
+          <li>Max. {EXAM_MAX_POINTS} Punkte · Schweizer Notensystem (6 = best)</li>
           <li>Empfohlene Zeit: 45 Minuten (optional)</li>
           <li>Sofort-Feedback nach jeder Antwort</li>
         </ul>

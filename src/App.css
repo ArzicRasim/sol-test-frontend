@@ -319,6 +319,20 @@
   color: var(--accent);
 }
 
+.question-competency {
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--accent);
+  font-family: var(--font-mono, ui-monospace, monospace);
+  letter-spacing: 0.02em;
+}
+
+.question-section-title {
+  font-size: 0.75rem;
+  color: var(--text);
+  opacity: 0.85;
+}
+
 .question-type {
   font-size: 0.7rem;
   text-transform: uppercase;
@@ -574,6 +588,22 @@
   gap: 0.5rem;
   justify-content: center;
   margin-top: 1rem;
+}
+
+.exam-result-points {
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+}
+
+.exam-grade {
+  font-size: 1.25rem;
+  margin-bottom: 0.25rem;
+}
+
+.exam-grade-hint {
+  font-size: 0.875rem;
+  opacity: 0.75;
+  margin-bottom: 0.5rem;
 }
 
 .stats-overview {
