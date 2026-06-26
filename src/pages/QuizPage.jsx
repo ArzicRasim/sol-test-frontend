@@ -6,9 +6,11 @@ import {
   getVariantQuestions,
 } from '../data/index.js'
 import { getWeakQuestions } from '../context/progressStorage.js'
+import { EXAM_MAX_POINTS } from '../data/grading.js'
 import { useProgress } from '../hooks/useProgress.js'
 import QuestionCard from '../components/QuestionCard.jsx'
 import QuizControls from '../components/QuizControls.jsx'
+import SessionResultSummary from '../components/SessionResultSummary.jsx'
 
 function shuffle(array) {
   const arr = [...array]
@@ -68,6 +70,20 @@ function QuizSession({ sectionId, mode, section, progress, submitAnswer, variant
   const modeLabel =
     mode === 'variants' ? ' (Varianten)' : mode === 'weak' ? ' (Schwache Themen)' : ''
 
+  const showSwissGrade = sectionId === 'all' && mode === 'original'
+
+  const summaryActions = (
+    <>
+      <Link to="/" className="btn btn-secondary">Dashboard</Link>
+      <Link
+        to={`/quiz/${sectionId}${mode !== 'original' ? `?mode=${mode}` : ''}`}
+        className="btn btn-primary"
+      >
+        Nochmal
+      </Link>
+    </>
+  )
+
   return (
     <div className="page quiz-page">
       <header className="page-header">
@@ -98,18 +114,22 @@ function QuizSession({ sectionId, mode, section, progress, submitAnswer, variant
         </>
       )}
 
-      {finished && (
+      {finished && showSwissGrade && (
+        <SessionResultSummary
+          title="Quiz abgeschlossen"
+          correctCount={sessionScore.correct}
+          maxPoints={EXAM_MAX_POINTS}
+          actions={summaryActions}
+        />
+      )}
+
+      {finished && !showSwissGrade && (
         <div className="quiz-summary">
           <h2>Quiz abgeschlossen</h2>
           <p>
             In dieser Session: {sessionScore.correct}/{sessionScore.total} richtig
           </p>
-          <div className="quiz-summary-actions">
-            <Link to="/" className="btn btn-secondary">Dashboard</Link>
-            <Link to={`/quiz/${sectionId}${mode !== 'original' ? `?mode=${mode}` : ''}`} className="btn btn-primary">
-              Nochmal
-            </Link>
-          </div>
+          <div className="quiz-summary-actions">{summaryActions}</div>
         </div>
       )}
     </div>

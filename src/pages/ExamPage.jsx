@@ -1,10 +1,11 @@
 import { useCallback, useEffect, useMemo, useState } from 'react'
 import { Link } from 'react-router-dom'
-import { EXAM_MAX_POINTS, calculateSwissGrade } from '../data/grading.js'
+import { EXAM_MAX_POINTS } from '../data/grading.js'
 import { getExamQuestions, originalQuestions } from '../data/index.js'
 import { useProgress } from '../hooks/useProgress.js'
 import QuestionCard from '../components/QuestionCard.jsx'
 import QuizControls from '../components/QuizControls.jsx'
+import SessionResultSummary from '../components/SessionResultSummary.jsx'
 
 function ExamSession({ submitAnswer, onFinish }) {
   const questions = useMemo(() => getExamQuestions(), [])
@@ -38,27 +39,20 @@ function ExamSession({ submitAnswer, onFinish }) {
   )
 
   if (finished) {
-    const result = calculateSwissGrade(sessionScore.correct, EXAM_MAX_POINTS)
     return (
-      <div className="quiz-summary">
-        <h2>Prüfung abgeschlossen</h2>
-        <p className="exam-result-points">
-          Ergebnis: {result.points} / {result.maxPoints} Punkte
-        </p>
-        <p className="exam-grade">
-          Note: <strong>{result.grade.toFixed(1)}</strong>
-          {' '}(Schweizer Notensystem, 6 = best)
-        </p>
-        {!result.passed && (
-          <p className="exam-grade-hint">Bestehensgrenze: Note 4.0</p>
-        )}
-        <div className="quiz-summary-actions">
-          <Link to="/" className="btn btn-secondary">Dashboard</Link>
-          <button type="button" className="btn btn-primary" onClick={onFinish}>
-            Neue Prüfung
-          </button>
-        </div>
-      </div>
+      <SessionResultSummary
+        title="Prüfung abgeschlossen"
+        correctCount={sessionScore.correct}
+        maxPoints={EXAM_MAX_POINTS}
+        actions={
+          <>
+            <Link to="/" className="btn btn-secondary">Dashboard</Link>
+            <button type="button" className="btn btn-primary" onClick={onFinish}>
+              Neue Prüfung
+            </button>
+          </>
+        }
+      />
     )
   }
 
